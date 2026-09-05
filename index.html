@@ -1,0 +1,1387 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cronograma Orlando 2026</title>
+  <style>
+    :root {
+      --bg: #f6f8fb;
+      --card: #ffffff;
+      --ink: #18202f;
+      --muted: #647084;
+      --line: #dfe5ef;
+      --brand: #275efe;
+      --brand-2: #0ea5e9;
+      --good: #16a34a;
+      --warn: #f59e0b;
+      --danger: #dc2626;
+      --soft-blue: #edf4ff;
+      --soft-green: #ecfdf3;
+      --soft-yellow: #fff7e6;
+      --soft-red: #fff1f2;
+      --shadow: 0 12px 30px rgba(24, 32, 47, 0.08);
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.45;
+    }
+
+    a { color: var(--brand); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    header.hero {
+      background: linear-gradient(135deg, #172554 0%, #275efe 52%, #0ea5e9 100%);
+      color: white;
+      padding: 34px 18px 26px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header.hero::after {
+      content: "";
+      position: absolute;
+      width: 320px;
+      height: 320px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.13);
+      right: -120px;
+      top: -120px;
+    }
+
+    .hero-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      background: rgba(255,255,255,.16);
+      border: 1px solid rgba(255,255,255,.25);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: clamp(30px, 7vw, 54px);
+      letter-spacing: -0.04em;
+      line-height: 1.02;
+    }
+
+    .subtitle {
+      margin: 0;
+      max-width: 820px;
+      color: rgba(255,255,255,.88);
+      font-size: 17px;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .meta-card {
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.22);
+      border-radius: 16px;
+      padding: 14px;
+      backdrop-filter: blur(8px);
+    }
+
+    .meta-card small {
+      display: block;
+      color: rgba(255,255,255,.72);
+      margin-bottom: 3px;
+      font-size: 12px;
+    }
+
+    .meta-card strong {
+      display: block;
+      font-size: 15px;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255,255,255,.92);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(10px);
+    }
+
+    .topbar-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 10px 16px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .nav-pill {
+      flex: 0 0 auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--ink);
+      font-size: 13px;
+      font-weight: 650;
+      box-shadow: 0 3px 8px rgba(24,32,47,.04);
+    }
+
+    .nav-pill:hover {
+      text-decoration: none;
+      border-color: #b8c7ff;
+      background: var(--soft-blue);
+    }
+
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 22px 16px 80px;
+    }
+
+    section {
+      scroll-margin-top: 76px;
+    }
+
+    .section-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 22px;
+      margin: 18px 0;
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: 28px;
+      letter-spacing: -0.03em;
+    }
+
+    h3 {
+      margin: 22px 0 10px;
+      font-size: 21px;
+      letter-spacing: -0.02em;
+    }
+
+    h4 {
+      margin: 16px 0 8px;
+      font-size: 16px;
+    }
+
+    p { margin: 8px 0 12px; }
+
+    .note {
+      padding: 14px 16px;
+      border-radius: 14px;
+      background: var(--soft-blue);
+      border: 1px solid #bfd6ff;
+      color: #16315f;
+      margin: 12px 0;
+    }
+
+    .warning {
+      padding: 14px 16px;
+      border-radius: 14px;
+      background: var(--soft-yellow);
+      border: 1px solid #f8d995;
+      color: #7a4a00;
+      margin: 12px 0;
+    }
+
+    .success {
+      padding: 14px 16px;
+      border-radius: 14px;
+      background: var(--soft-green);
+      border: 1px solid #bbf7d0;
+      color: #14532d;
+      margin: 12px 0;
+    }
+
+    .danger {
+      padding: 14px 16px;
+      border-radius: 14px;
+      background: var(--soft-red);
+      border: 1px solid #fecdd3;
+      color: #7f1d1d;
+      margin: 12px 0;
+    }
+
+    .grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+    .mini-card {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 14px;
+      background: #fff;
+    }
+
+    .mini-card h4 { margin-top: 0; }
+
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      margin: 10px 0 18px;
+      background: #fff;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 680px;
+      font-size: 14px;
+    }
+
+    th {
+      background: #f1f5fb;
+      text-align: left;
+      padding: 11px 12px;
+      color: #31415c;
+      border-bottom: 1px solid var(--line);
+      white-space: nowrap;
+    }
+
+    td {
+      padding: 11px 12px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+
+    tr:last-child td { border-bottom: none; }
+
+    .priority {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      padding: 4px 8px;
+      font-size: 12px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .p-high { background: #dcfce7; color: #166534; }
+    .p-med { background: #fef3c7; color: #92400e; }
+    .p-opt { background: #e0f2fe; color: #075985; }
+    .p-no { background: #fee2e2; color: #991b1b; }
+
+    .day {
+      border-left: 6px solid var(--brand);
+    }
+
+    .day-title {
+      display: flex;
+      gap: 14px;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+
+    .date-badge {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 72px;
+      min-width: 72px;
+      border-radius: 16px;
+      background: var(--soft-blue);
+      border: 1px solid #bfd6ff;
+      overflow: hidden;
+      font-weight: 800;
+      color: #17306c;
+    }
+
+    .date-badge span:first-child {
+      width: 100%;
+      text-align: center;
+      background: #dbeafe;
+      padding: 4px;
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+
+    .date-badge span:last-child {
+      font-size: 24px;
+      padding: 8px 0 9px;
+      line-height: 1;
+    }
+
+    .day-heading {
+      flex: 1;
+      min-width: 240px;
+    }
+
+    .day-heading h2 { margin-bottom: 4px; }
+
+    .day-heading p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .day-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 4px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 12px;
+      background: #fff;
+      color: var(--ink);
+      font-weight: 700;
+      font-size: 13px;
+      cursor: pointer;
+    }
+
+    .btn.primary {
+      background: var(--brand);
+      color: #fff;
+      border-color: var(--brand);
+    }
+
+    .btn:hover { text-decoration: none; filter: brightness(.98); }
+
+    .timeline {
+      position: relative;
+      padding-left: 20px;
+      margin: 12px 0 18px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 7px;
+      top: 6px;
+      bottom: 6px;
+      width: 2px;
+      background: #d6def0;
+    }
+
+    .time-item {
+      position: relative;
+      padding: 10px 0 10px 12px;
+    }
+
+    .time-item::before {
+      content: "";
+      position: absolute;
+      left: -17px;
+      top: 16px;
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--brand);
+      border: 2px solid #fff;
+      box-shadow: 0 0 0 2px #c7d2fe;
+    }
+
+    .time {
+      display: inline-block;
+      font-size: 12px;
+      color: var(--brand);
+      font-weight: 800;
+      margin-bottom: 3px;
+      text-transform: uppercase;
+    }
+
+    .time-item strong {
+      display: block;
+      font-size: 15px;
+    }
+
+    .time-item small {
+      display: block;
+      color: var(--muted);
+      margin-top: 3px;
+    }
+
+    .checklist {
+      display: grid;
+      gap: 8px;
+      margin: 10px 0 14px;
+    }
+
+    .check {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #fff;
+    }
+
+    .check input {
+      margin-top: 3px;
+      width: 18px;
+      height: 18px;
+      accent-color: var(--brand);
+    }
+
+    .check label {
+      flex: 1;
+      cursor: pointer;
+    }
+
+    .check label small {
+      display: block;
+      color: var(--muted);
+      margin-top: 3px;
+    }
+
+    .check:has(input:checked) {
+      background: #f0fdf4;
+      border-color: #bbf7d0;
+    }
+
+    .check:has(input:checked) label {
+      text-decoration: line-through;
+      color: #365b3e;
+    }
+
+    .links {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin: 8px 0 12px;
+    }
+
+    .link-chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 10px;
+      background: #f8fafc;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 650;
+    }
+
+    .footer-nav {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      border-top: 1px solid var(--line);
+      margin-top: 18px;
+      padding-top: 14px;
+    }
+
+    .progress-box {
+      position: fixed;
+      right: 14px;
+      bottom: 14px;
+      z-index: 50;
+      background: #fff;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      border-radius: 999px;
+      padding: 8px 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .progress-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--good);
+    }
+
+    .printbar {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+
+    .small-muted {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 860px) {
+      .meta-grid { grid-template-columns: repeat(2, 1fr); }
+      .grid.two, .grid.three { grid-template-columns: 1fr; }
+      .section-card { padding: 18px; }
+      table { min-width: 720px; }
+      .topbar-inner { padding-left: 10px; padding-right: 10px; }
+      .nav-pill { font-size: 12px; padding: 7px 10px; }
+    }
+
+    @media (max-width: 560px) {
+      header.hero { padding-top: 26px; }
+      .meta-grid { grid-template-columns: 1fr; }
+      main { padding-left: 12px; padding-right: 12px; }
+      .section-card { border-radius: 15px; padding: 15px; }
+      .day-title { gap: 10px; }
+      .date-badge { width: 62px; min-width: 62px; }
+      .date-badge span:last-child { font-size: 21px; }
+      h2 { font-size: 23px; }
+      h3 { font-size: 19px; }
+      .progress-box { left: 12px; right: 12px; justify-content: center; }
+      .footer-nav { flex-direction: column; }
+      .btn { width: 100%; }
+    }
+
+    @media print {
+      .topbar, .progress-box, .printbar, .footer-nav { display: none; }
+      body { background: white; }
+      .section-card { box-shadow: none; page-break-inside: avoid; }
+      a { color: inherit; text-decoration: none; }
+      header.hero { color: #000; background: #fff; border-bottom: 2px solid #000; }
+      .meta-card { color: #000; border: 1px solid #aaa; background: #fff; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero" id="top">
+    <div class="hero-inner">
+      <div class="eyebrow">✈️ Orlando 2026 · Cronograma familiar actualizado</div>
+      <h1>Disney, Universal, Epic Universe y Orlando</h1>
+      <p class="subtitle">Agenda responsive para usar desde el celular, con checklist previaje, estrategia anti-filas, fotos, compras, links útiles y cronograma día por día.</p>
+      <div class="meta-grid">
+        <div class="meta-card"><small>Fechas</small><strong>24/09 al 06/10/2026</strong></div>
+        <div class="meta-card"><small>Grupo</small><strong>4 personas · hijos 17 y 11</strong></div>
+        <div class="meta-card"><small>Foco</small><strong>Harry Potter · Star Wars · Avatar</strong></div>
+        <div class="meta-card"><small>Movilidad</small><strong>Uber/Lyft · sin auto</strong></div>
+      </div>
+      <div class="printbar">
+        <button class="btn primary" onclick="window.print()">🖨️ Imprimir / guardar PDF</button>
+        <button class="btn" onclick="resetChecks()">↩️ Reiniciar checklists</button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="topbar" aria-label="Navegación principal">
+    <div class="topbar-inner">
+      <a class="nav-pill" href="#resumen">🧭 Resumen</a>
+      <a class="nav-pill" href="#previaje">✅ Previaje</a>
+      <a class="nav-pill" href="#extras">💸 Extras</a>
+      <a class="nav-pill" href="#walmart">🛒 Walmart</a>
+      <a class="nav-pill" href="#dia-24">24/09</a>
+      <a class="nav-pill" href="#dia-25">25/09</a>
+      <a class="nav-pill" href="#dia-26">26/09</a>
+      <a class="nav-pill" href="#dia-27">27/09</a>
+      <a class="nav-pill" href="#dia-28">28/09</a>
+      <a class="nav-pill" href="#dia-29">29/09</a>
+      <a class="nav-pill" href="#dia-30">30/09</a>
+      <a class="nav-pill" href="#dia-01">01/10</a>
+      <a class="nav-pill" href="#dia-02">02/10</a>
+      <a class="nav-pill" href="#dia-03">03/10</a>
+      <a class="nav-pill" href="#dia-04">04/10</a>
+      <a class="nav-pill" href="#dia-05">05/10</a>
+      <a class="nav-pill" href="#dia-06">06/10</a>
+      <a class="nav-pill" href="#links">🔗 Links</a>
+    </div>
+  </nav>
+
+  <main>
+    <section id="resumen" class="section-card">
+      <h2>🧭 Resumen general del viaje</h2>
+      <div class="note">
+        Los horarios son orientativos. Más cerca del viaje hay que ajustar con horarios oficiales, Early Entry, Early Park Admission, shows, clima y tiempos reales de espera.
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Fecha</th><th>Día</th><th>Plan principal</th><th>Objetivo</th></tr></thead>
+          <tbody>
+            <tr><td>24/09</td><td>Jueves</td><td>Llegada a Orlando + Disney All-Star Sports + Walmart</td><td>Acomodarse, comprar básicos y dormir temprano.</td></tr>
+            <tr><td>25/09</td><td>Viernes</td><td>Disney’s Animal Kingdom</td><td>Avatar, Safari y primer día llevadero.</td></tr>
+            <tr><td>26/09</td><td>Sábado</td><td>Disney’s Hollywood Studios</td><td>Star Wars, Toy Story y Slinky Dog.</td></tr>
+            <tr><td>27/09</td><td>Domingo</td><td>EPCOT</td><td>Guardians, Remy, Soarin, Frozen y Club Cool.</td></tr>
+            <tr><td>28/09</td><td>Lunes</td><td>Magic Kingdom</td><td>TRON, Seven Dwarfs, clásicos y fuegos.</td></tr>
+            <tr><td>29/09</td><td>Martes</td><td>Cambio Disney → Universal</td><td>Descanso, compras livianas y CityWalk.</td></tr>
+            <tr><td>30/09</td><td>Miércoles</td><td>Universal Studios + Islands of Adventure</td><td>Harry Potter clásico: Hogsmeade, Hogwarts y Diagon Alley.</td></tr>
+            <tr><td>01/10</td><td>Jueves</td><td>Epic Universe</td><td>Ministry of Magic + Super Nintendo World.</td></tr>
+            <tr><td>02/10</td><td>Viernes</td><td>Universal / Islands repetición estratégica</td><td>Completar pendientes, Spider-Man, MIB, Transformers y HP.</td></tr>
+            <tr><td>03/10</td><td>Sábado</td><td>Cambio a Ramada + Kia Center + compras</td><td>Experiencia NBA liviana y compras.</td></tr>
+            <tr><td>04/10</td><td>Domingo</td><td>Disney Springs</td><td>Paseo, compras, fotos y descanso.</td></tr>
+            <tr><td>05/10</td><td>Lunes</td><td>Día flexible Orlando</td><td>Winter Park, Celebration, Icon Park, Lake Eola o compras.</td></tr>
+            <tr><td>06/10</td><td>Martes</td><td>Regreso</td><td>Vuelo 14:00.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="previaje" class="section-card">
+      <h2>✅ Cronograma previaje</h2>
+      <p>Checklist para seguir antes de salir de Argentina. Las casillas quedan guardadas en este navegador.</p>
+
+      <h3>06/08 al 15/08 · Base administrativa</h3>
+      <div class="checklist">
+        <div class="check"><input type="checkbox" id="pre-1"><label for="pre-1">Revisar pasaportes de los 4.<small>Verificar vigencia y escanear/fotografiar.</small></label></div>
+        <div class="check"><input type="checkbox" id="pre-2"><label for="pre-2">Revisar visas de EE.UU.<small>Confirmar que todos tengan visa vigente.</small></label></div>
+        <div class="check"><input type="checkbox" id="pre-3"><label for="pre-3">Guardar voucher de PAX Assistance.<small>Teléfono de emergencia y póliza offline.</small></label></div>
+        <div class="check"><input type="checkbox" id="pre-4"><label for="pre-4">Revisar reservas.<small>Aéreos Copa, hoteles Disney/Universal/Ramada, tickets Disney/Universal.</small></label></div>
+        <div class="check"><input type="checkbox" id="pre-5"><label for="pre-5">Crear carpeta digital.<small>Pasaportes, visas, vuelos, hoteles, asistencia, tickets y contactos.</small></label></div>
+        <div class="check"><input type="checkbox" id="pre-6"><label for="pre-6">Instalar apps base.<small>My Disney Experience, Universal Orlando, Uber, Lyft, Copa, Google Maps.</small></label></div>
+      </div>
+
+      <h3>16/08 al 31/08 · Fotos, conectividad y apps</h3>
+      <div class="checklist">
+        <div class="check"><input type="checkbox" id="pre-7"><label for="pre-7">Comprar Memory Maker Disney completo.<small>Recomendado para tener muchas fotos familiares sin estar pendiente del celular.</small></label></div>
+        <div class="check"><input type="checkbox" id="pre-8"><label for="pre-8">Comprar My Universal Photos 3-Day.<small>Para los 3 días Universal/Epic.</small></label></div>
+        <div class="check"><input type="checkbox" id="pre-9"><label for="pre-9">Definir eSIM, chip o plan de datos.<small>Fundamental para apps, Uber, mapas y comunicación familiar.</small></label></div>
+        <div class="check"><input type="checkbox" id="pre-10"><label for="pre-10">Configurar Uber y Lyft.<small>Cargar tarjeta y probar inicio de sesión.</small></label></div>
+        <div class="check"><input type="checkbox" id="pre-11"><label for="pre-11">Descargar Google Maps offline de Orlando.<small>Backup por si falla la señal.</small></label></div>
+        <div class="check"><input type="checkbox" id="pre-12"><label for="pre-12">Configurar Apple Pay / Google Pay.<small>Plan B para pagos contactless.</small></label></div>
+      </div>
+
+      <h3>01/09 al 10/09 · Revisión de extras pagos</h3>
+      <div class="checklist">
+        <div class="check"><input type="checkbox" id="pre-13"><label for="pre-13">Revisar precios Universal Express para Epic Universe.<small>No comprar salvo precio muy conveniente.</small></label></div>
+        <div class="check"><input type="checkbox" id="pre-14"><label for="pre-14">Revisar horarios preliminares de Disney y Universal.<small>Incluye Early Entry y Early Park Admission.</small></label></div>
+        <div class="check"><input type="checkbox" id="pre-15"><label for="pre-15">Revisar NBA / Orlando Magic.<small>Buscar open practice, fan event o evento público.</small></label></div>
+        <div class="check"><input type="checkbox" id="pre-16"><label for="pre-16">Marcar quick service por parque.<small>No reservas especiales, solo opciones prácticas.</small></label></div>
+      </div>
+
+      <h3>04/09 al 16/09 · Monitoreo Lightning Lane</h3>
+      <div class="checklist">
+        <div class="check"><input type="checkbox" id="pre-17"><label for="pre-17">04/09: mirar precio Animal Kingdom 25/09.<small>Avatar Flight of Passage como opcional.</small></label></div>
+        <div class="check"><input type="checkbox" id="pre-18"><label for="pre-18">05/09: mirar precio Hollywood Studios 26/09.<small>Multi Pass + Rise of the Resistance.</small></label></div>
+        <div class="check"><input type="checkbox" id="pre-19"><label for="pre-19">06/09: mirar precio EPCOT 27/09.<small>Guardians Single Pass.</small></label></div>
+        <div class="check"><input type="checkbox" id="pre-20"><label for="pre-20">07/09: mirar precio Magic Kingdom 28/09.<small>TRON + Seven Dwarfs como opcional.</small></label></div>
+      </div>
+
+      <h3>17/09 · Día clave Lightning Lane Disney</h3>
+      <div class="warning">
+        Como se hospedan en hotel Disney, la compra se habilita 7 días antes del check-in. Para el viaje, la fecha clave es el <strong>17/09/2026</strong>, desde las <strong>7:00 a.m. de Orlando</strong>, aprox. <strong>8:00 a.m. Argentina</strong>.
+      </div>
+      <div class="checklist">
+        <div class="check"><input type="checkbox" id="pre-21"><label for="pre-21">Decidir Hollywood Studios Multi Pass.<small>Muy recomendable si el precio es razonable.</small></label></div>
+        <div class="check"><input type="checkbox" id="pre-22"><label for="pre-22">Decidir Rise of the Resistance Single Pass.<small>Muy recomendable para evitar la peor fila de Hollywood Studios.</small></label></div>
+        <div class="check"><input type="checkbox" id="pre-23"><label for="pre-23">Decidir Guardians Single Pass.<small>Recomendable si quieren asegurar esa experiencia.</small></label></div>
+        <div class="check"><input type="checkbox" id="pre-24"><label for="pre-24">Decidir TRON Single Pass.<small>Recomendable para no arriesgar la prioridad de Magic Kingdom.</small></label></div>
+        <div class="check"><input type="checkbox" id="pre-25"><label for="pre-25">Decidir Avatar y Seven Dwarfs.<small>Solo si el precio es razonable o buscan más comodidad.</small></label></div>
+      </div>
+
+      <h3>18/09 al 23/09 · Cierre final</h3>
+      <div class="checklist">
+        <div class="check"><input type="checkbox" id="pre-26"><label for="pre-26">Revisar Universal Express Epic para 01/10.<small>Comprar solo si el precio es razonable.</small></label></div>
+        <div class="check"><input type="checkbox" id="pre-27"><label for="pre-27">Habilitar tarjetas y límites internacionales.<small>Incluir consumos online y PIN si aplica.</small></label></div>
+        <div class="check"><input type="checkbox" id="pre-28"><label for="pre-28">Confirmar eSIM/chip.<small>Que esté lista para activar al llegar.</small></label></div>
+        <div class="check"><input type="checkbox" id="pre-29"><label for="pre-29">Guardar capturas offline.<small>Vuelos, hoteles, asistencia, tickets, direcciones, pasaportes y visas.</small></label></div>
+        <div class="check"><input type="checkbox" id="pre-30"><label for="pre-30">Hacer check-in Copa cuando se habilite.<small>Guardar boarding passes.</small></label></div>
+        <div class="check"><input type="checkbox" id="pre-31"><label for="pre-31">Llevar lista Walmart preparada.<small>Para no perder tiempo al llegar.</small></label></div>
+        <div class="check"><input type="checkbox" id="pre-32"><label for="pre-32">Cargar power banks antes de salir.<small>Llevar al menos una buena desde Argentina.</small></label></div>
+      </div>
+    </section>
+
+    <section id="extras" class="section-card">
+      <h2>💸 Extras pagos opcionales y recomendados</h2>
+      <div class="grid two">
+        <div class="mini-card">
+          <h4>📸 Fotos</h4>
+          <p><strong>Comprar:</strong> Memory Maker Disney + My Universal Photos 3-Day.</p>
+          <p class="small-muted">Encaja con la idea de disfrutar el viaje sin vivir sacando fotos.</p>
+        </div>
+        <div class="mini-card">
+          <h4>⚡ Pases rápidos</h4>
+          <p><strong>Opcional:</strong> Lightning Disney selectivo; Universal Express solo evaluarlo para Epic.</p>
+          <p class="small-muted">No compraría Express para Universal/Islands de entrada.</p>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Extra</th><th>Decisión</th><th>Cuándo verificar</th><th>Costo estimado familia 4</th></tr></thead>
+          <tbody>
+            <tr><td>Memory Maker Disney</td><td>Comprar</td><td>Agosto / antes del viaje</td><td>USD 185 anticipado + tax</td></tr>
+            <tr><td>My Universal Photos 3-Day</td><td>Comprar</td><td>Antes del 30/09</td><td>USD 129,99 + tax</td></tr>
+            <tr><td>Hollywood Studios Multi Pass</td><td>Opcional fuerte</td><td>Ver desde 05/09; comprar 17/09</td><td>USD 120–160 aprox.</td></tr>
+            <tr><td>Rise Single Pass</td><td>Opcional fuerte</td><td>17/09</td><td>USD 80–100 aprox.</td></tr>
+            <tr><td>Guardians Single Pass</td><td>Opcional</td><td>17/09</td><td>USD 60–100 aprox.</td></tr>
+            <tr><td>TRON Single Pass</td><td>Opcional</td><td>17/09</td><td>USD 80–100 aprox.</td></tr>
+            <tr><td>Avatar Single Pass</td><td>Opcional</td><td>17/09</td><td>USD 60–80 aprox.</td></tr>
+            <tr><td>Seven Dwarfs Single Pass</td><td>Opcional</td><td>17/09</td><td>USD 50–75 aprox.</td></tr>
+            <tr><td>Epic Universe Express</td><td>Opcional caro</td><td>Agosto/septiembre</td><td>USD 600–1.000+ aprox.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="note">Recomendación equilibrada: fotos sí; Lightning Disney solo para puntos críticos; Express Universal solo si Epic aparece a precio razonable.</div>
+    </section>
+
+    <section id="walmart" class="section-card">
+      <h2>🛒 Compra inicial en Walmart</h2>
+      <p><strong>Walmart sugerido:</strong> 8990 Turkey Lake Rd, Orlando, FL 32819.</p>
+      <div class="links">
+        <a class="link-chip" target="_blank" href="https://www.google.com/maps/search/?api=1&query=8990+Turkey+Lake+Rd+Orlando+FL+32819">Abrir en Google Maps</a>
+        <a class="link-chip" target="_blank" href="https://www.walmart.com/">Walmart</a>
+      </div>
+      <div class="warning">Tiene sentido comprar varias cosas allá. Igual llevaría desde Argentina: medicación personal, recetas si aplica, al menos una power bank cargada y 1 adaptador básico.</div>
+
+      <h3>Lista de compra de llegada</h3>
+      <div class="checklist">
+        <div class="check"><input type="checkbox" id="wm-1"><label for="wm-1">Botellas térmicas/reutilizables.<small>Buscar Ozark Trail, Contigo, Thermoflask, Stanley si hay buen precio.</small></label></div>
+        <div class="check"><input type="checkbox" id="wm-2"><label for="wm-2">Ponchos compactos.<small>Emergency Rain Poncho, Disposable Rain Poncho, Frogg Toggs.</small></label></div>
+        <div class="check"><input type="checkbox" id="wm-3"><label for="wm-3">Protector solar cuerpo.<small>Banana Boat Kids/Sport SPF 50, Coppertone Kids SPF 50, Neutrogena Beach Defense, Equate Sport SPF 50.</small></label></div>
+        <div class="check"><input type="checkbox" id="wm-4"><label for="wm-4">Protector solar en barra.<small>Coppertone o Neutrogena stick; ideal para cara, orejas y reaplicación.</small></label></div>
+        <div class="check"><input type="checkbox" id="wm-5"><label for="wm-5">Gorras y lentes si faltan.<small>Comprar básicos y después souvenirs si quieren.</small></label></div>
+        <div class="check"><input type="checkbox" id="wm-6"><label for="wm-6">Ziploc / bolsas herméticas.<small>Ziploc Slider Bags o Great Value Storage/Freezer Bags.</small></label></div>
+        <div class="check"><input type="checkbox" id="wm-7"><label for="wm-7">Snacks y bebidas.<small>Agua, Gatorade/Powerade, barritas, crackers, frutas, galletas.</small></label></div>
+        <div class="check"><input type="checkbox" id="wm-8"><label for="wm-8">Mini botiquín OTC.<small>Tylenol/Equate Acetaminophen, Advil/Motrin/Equate Ibuprofen, Tums, Pepcid AC, Dramamine, Band-Aid, moleskin.</small></label></div>
+        <div class="check"><input type="checkbox" id="wm-9"><label for="wm-9">Adaptadores/cargadores extra.<small>US plug adapter, cargador USB con ficha estadounidense.</small></label></div>
+        <div class="check"><input type="checkbox" id="wm-10"><label for="wm-10">Souvenirs económicos Disney/Universal.<small>Mirar remeras, vasos, gorras, llaveros.</small></label></div>
+      </div>
+
+      <div class="danger"><strong>Medicamentos:</strong> seguir siempre la etiqueta “Drug Facts”. Evitar duplicar ingredientes activos, especialmente acetaminophen/paracetamol. Para chicos, buscar versiones Children’s cuando aplique y dosificar por etiqueta/peso/edad.</div>
+    </section>
+
+    <!-- DAY 24 -->
+    <section id="dia-24" class="section-card day">
+      <div class="day-title">
+        <div class="date-badge"><span>Sep</span><span>24</span></div>
+        <div class="day-heading">
+          <h2>Jueves 24/09 · Llegada a Orlando</h2>
+          <p>Objetivo: llegar, instalarse, comprar básicos y dormir temprano.</p>
+        </div>
+      </div>
+      <div class="timeline">
+        <div class="time-item"><span class="time">14:00</span><strong>Llegada a Orlando.</strong><small>Trámites, equipaje y salida del aeropuerto.</small></div>
+        <div class="time-item"><span class="time">15:30 / 16:00</span><strong>Uber XL o Lyft XL a Disney’s All-Star Sports Resort.</strong><small>Para 4 personas con carry-on, mejor XL.</small></div>
+        <div class="time-item"><span class="time">16:30 / 17:00</span><strong>Check-in y recorrido breve del hotel.</strong></div>
+        <div class="time-item"><span class="time">18:00</span><strong>Walmart Turkey Lake.</strong><small>Comprar botellas, ponchos, protector, botiquín, snacks y extras.</small></div>
+        <div class="time-item"><span class="time">20:00</span><strong>Cena rápida en hotel.</strong></div>
+        <div class="time-item"><span class="time">21:30</span><strong>Preparar mochila Animal Kingdom.</strong></div>
+        <div class="time-item"><span class="time">22:00</span><strong>Dormir.</strong><small>Primer parque al día siguiente.</small></div>
+      </div>
+      <div class="footer-nav"><a class="btn" href="#walmart">← Walmart</a><a class="btn primary" href="#dia-25">Siguiente día →</a></div>
+    </section>
+
+    <!-- DAY 25 -->
+    <section id="dia-25" class="section-card day">
+      <div class="day-title">
+        <div class="date-badge"><span>Sep</span><span>25</span></div>
+        <div class="day-heading">
+          <h2>Viernes 25/09 · Disney’s Animal Kingdom</h2>
+          <p>Objetivo: Avatar + Safari + primer día llevadero.</p>
+        </div>
+      </div>
+      <div class="links">
+        <a class="link-chip" target="_blank" href="https://disneyworld.disney.go.com/destinations/animal-kingdom/">Animal Kingdom oficial</a>
+        <a class="link-chip" target="_blank" href="https://disneyworld.disney.go.com/attractions/animal-kingdom/avatar-flight-of-passage/">Avatar Flight of Passage</a>
+        <a class="link-chip" target="_blank" href="https://disneyworld.disney.go.com/dining/animal-kingdom/satuli-canteen/">Satu’li Canteen</a>
+      </div>
+      <div class="timeline">
+        <div class="time-item"><span class="time">Muy temprano</span><strong>Llegar para Early Entry.</strong></div>
+        <div class="time-item"><span class="time">Primero</span><strong>Avatar Flight of Passage.</strong><small>Si no compran Single Pass, hacerla al inicio.</small></div>
+        <div class="time-item"><span class="time">Después</span><strong>Na’vi River Journey.</strong></div>
+        <div class="time-item"><span class="time">Media mañana</span><strong>Kilimanjaro Safaris.</strong><small>Mejor temprano por actividad de animales.</small></div>
+        <div class="time-item"><span class="time">Mediodía</span><strong>Almuerzo en Satu’li Canteen.</strong></div>
+        <div class="time-item"><span class="time">Tarde</span><strong>Festival of the Lion King o recorrido tranquilo.</strong></div>
+        <div class="time-item"><span class="time">Tarde/noche</span><strong>Pandora para fotos.</strong><small>Usar Memory Maker/PhotoPass.</small></div>
+      </div>
+
+      <h3>Atracciones del día</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Prioridad</th><th>Atracción</th><th>Qué es</th></tr></thead>
+          <tbody>
+            <tr><td><span class="priority p-high">Alta</span></td><td>Avatar Flight of Passage</td><td>Simulador inmersivo donde “volás” sobre Pandora montado en un banshee.</td></tr>
+            <tr><td><span class="priority p-med">Alta/media</span></td><td>Na’vi River Journey</td><td>Paseo tranquilo en bote por el mundo bioluminiscente de Pandora.</td></tr>
+            <tr><td><span class="priority p-high">Alta</span></td><td>Kilimanjaro Safaris</td><td>Safari en vehículo con animales reales.</td></tr>
+            <tr><td><span class="priority p-med">Media</span></td><td>Festival of the Lion King</td><td>Show musical/acrobático, ideal para descansar.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Atracciones no priorizadas</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Prioridad</th><th>Atracción</th><th>Qué es</th><th>Por qué no está priorizada</th></tr></thead>
+          <tbody>
+            <tr><td><span class="priority p-med">Media</span></td><td>Zootopia: Better Zoogether!</td><td>Show indoor.</td><td>Buen descanso, pero no desplaza Avatar y Safari.</td></tr>
+            <tr><td><span class="priority p-med">Media</span></td><td>Finding Nemo</td><td>Show musical indoor.</td><td>Puede servir si hace calor o quieren sentarse.</td></tr>
+            <tr><td><span class="priority p-opt">Optativa</span></td><td>Expedition Everest</td><td>Montaña rusa con tramo hacia atrás.</td><td>Fuera del plan principal por intensidad.</td></tr>
+            <tr><td><span class="priority p-opt">Optativa</span></td><td>Kali River Rapids</td><td>Atracción de agua.</td><td>Se pueden mojar bastante.</td></tr>
+            <tr><td><span class="priority p-no">Fuera</span></td><td>Dinosaur</td><td>Atracción de dinosaurios.</td><td>No se incluye en el plan.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="footer-nav"><a class="btn" href="#dia-24">← Día anterior</a><a class="btn primary" href="#dia-26">Siguiente día →</a></div>
+    </section>
+
+    <!-- DAY 26 -->
+    <section id="dia-26" class="section-card day">
+      <div class="day-title">
+        <div class="date-badge"><span>Sep</span><span>26</span></div>
+        <div class="day-heading">
+          <h2>Sábado 26/09 · Disney’s Hollywood Studios</h2>
+          <p>Objetivo: Star Wars + Toy Story + atracciones familiares.</p>
+        </div>
+      </div>
+      <div class="links">
+        <a class="link-chip" target="_blank" href="https://disneyworld.disney.go.com/destinations/hollywood-studios/">Hollywood Studios oficial</a>
+        <a class="link-chip" target="_blank" href="https://disneyworld.disney.go.com/attractions/hollywood-studios/star-wars-rise-of-the-resistance/">Rise of the Resistance</a>
+        <a class="link-chip" target="_blank" href="https://disneyworld.disney.go.com/attractions/hollywood-studios/star-tours/">Star Tours</a>
+      </div>
+      <div class="timeline">
+        <div class="time-item"><span class="time">Muy temprano</span><strong>Llegar para Early Entry.</strong></div>
+        <div class="time-item"><span class="time">Primero</span><strong>Rise of the Resistance.</strong></div>
+        <div class="time-item"><span class="time">Después</span><strong>Millennium Falcon: Smugglers Run.</strong></div>
+        <div class="time-item"><span class="time">Media mañana</span><strong>Galaxy’s Edge: fotos, tiendas y recorrido.</strong></div>
+        <div class="time-item"><span class="time">Media mañana</span><strong>Star Tours.</strong></div>
+        <div class="time-item"><span class="time">Mediodía</span><strong>Almuerzo en Docking Bay 7.</strong></div>
+        <div class="time-item"><span class="time">Tarde</span><strong>Mickey & Minnie’s Runaway Railway.</strong></div>
+        <div class="time-item"><span class="time">Tarde</span><strong>Toy Story Mania.</strong></div>
+        <div class="time-item"><span class="time">Tarde/noche</span><strong>Slinky Dog Dash.</strong></div>
+      </div>
+      <h3>Atracciones del día</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Prioridad</th><th>Atracción</th><th>Qué es</th></tr></thead>
+          <tbody>
+            <tr><td><span class="priority p-high">Alta</span></td><td>Rise of the Resistance</td><td>Experiencia inmersiva de Star Wars con base rebelde, nave, captura y escape.</td></tr>
+            <tr><td><span class="priority p-high">Alta</span></td><td>Millennium Falcon</td><td>Simulador donde pilotean el Halcón Milenario en equipo.</td></tr>
+            <tr><td><span class="priority p-med">Media/alta</span></td><td>Star Tours</td><td>Simulador 3D clásico de Star Wars con escenas variables.</td></tr>
+            <tr><td><span class="priority p-high">Alta</span></td><td>Slinky Dog Dash</td><td>Montaña rusa familiar de Toy Story, rápida pero amable.</td></tr>
+            <tr><td><span class="priority p-med">Alta/media</span></td><td>Mickey & Minnie’s Runaway Railway</td><td>Paseo familiar con música, pantallas y escenas de Mickey.</td></tr>
+            <tr><td><span class="priority p-med">Media</span></td><td>Toy Story Mania</td><td>Juego 3D competitivo de puntería.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Atracciones no priorizadas</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Prioridad</th><th>Atracción</th><th>Qué es</th><th>Por qué no está priorizada</th></tr></thead>
+          <tbody>
+            <tr><td><span class="priority p-med">Media/alta optativa</span></td><td>Indiana Jones Stunt Spectacular</td><td>Show en vivo de acción, acrobacias y escenas de riesgo.</td><td>Muy buena opción si el horario encaja, pero no desplaza Star Wars ni Toy Story.</td></tr>
+            <tr><td><span class="priority p-opt">Optativa</span></td><td>Tower of Terror</td><td>Torre con caídas libres.</td><td>Fuera por intensidad.</td></tr>
+            <tr><td><span class="priority p-opt">Optativa</span></td><td>Rock ’n’ Roller Coaster</td><td>Montaña rusa indoor intensa.</td><td>Fuera por intensidad.</td></tr>
+            <tr><td><span class="priority p-opt">Optativa</span></td><td>Alien Swirling Saucers</td><td>Atracción giratoria de Toy Story.</td><td>Secundaria; solo si hay poca fila.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="warning">Lightning opcional: este es el parque Disney donde más consideraría Multi Pass + Rise Single Pass.</div>
+      <div class="footer-nav"><a class="btn" href="#dia-25">← Día anterior</a><a class="btn primary" href="#dia-27">Siguiente día →</a></div>
+    </section>
+
+    <!-- DAY 27 -->
+    <section id="dia-27" class="section-card day">
+      <div class="day-title">
+        <div class="date-badge"><span>Sep</span><span>27</span></div>
+        <div class="day-heading">
+          <h2>Domingo 27/09 · EPCOT</h2>
+          <p>Objetivo: Guardians + Remy + Soarin + Frozen + Club Cool.</p>
+        </div>
+      </div>
+      <div class="links">
+        <a class="link-chip" target="_blank" href="https://disneyworld.disney.go.com/destinations/epcot/">EPCOT oficial</a>
+        <a class="link-chip" target="_blank" href="https://disneyworld.disney.go.com/attractions/epcot/guardians-of-the-galaxy-cosmic-rewind/">Guardians</a>
+        <a class="link-chip" target="_blank" href="https://disneyworld.disney.go.com/shops/epcot/club-cool/">Club Cool</a>
+      </div>
+      <div class="timeline">
+        <div class="time-item"><span class="time">Temprano</span><strong>Llegar para Early Entry.</strong></div>
+        <div class="time-item"><span class="time">Primero</span><strong>Remy o Frozen, según esperas.</strong></div>
+        <div class="time-item"><span class="time">Mañana</span><strong>Guardians of the Galaxy: Cosmic Rewind.</strong></div>
+        <div class="time-item"><span class="time">Media mañana</span><strong>Soarin’.</strong></div>
+        <div class="time-item"><span class="time">Mediodía</span><strong>Almuerzo quick service.</strong></div>
+        <div class="time-item"><span class="time">Tarde</span><strong>Frozen Ever After si no se hizo temprano.</strong></div>
+        <div class="time-item"><span class="time">Tarde</span><strong>Club Cool.</strong><small>Bebidas Coca-Cola internacionales.</small></div>
+        <div class="time-item"><span class="time">Tarde/noche</span><strong>World Showcase tranquilo.</strong></div>
+      </div>
+      <h3>Atracciones del día</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Prioridad</th><th>Atracción</th><th>Qué es</th></tr></thead>
+          <tbody>
+            <tr><td><span class="priority p-high">Alta</span></td><td>Guardians of the Galaxy: Cosmic Rewind</td><td>Montaña rusa indoor con música, giros y lanzamiento hacia atrás. Muy buena; puede marear.</td></tr>
+            <tr><td><span class="priority p-high">Alta</span></td><td>Remy’s Ratatouille Adventure</td><td>Paseo 3D familiar donde te sentís del tamaño de una rata.</td></tr>
+            <tr><td><span class="priority p-med">Media/alta</span></td><td>Soarin’</td><td>Simulador suave de vuelo panorámico.</td></tr>
+            <tr><td><span class="priority p-med">Media/alta</span></td><td>Frozen Ever After</td><td>Paseo en bote por escenas de Frozen.</td></tr>
+            <tr><td><span class="priority p-med">Media</span></td><td>Club Cool</td><td>Rincón de Coca-Cola para probar bebidas internacionales gratis.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Atracciones no priorizadas</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Prioridad</th><th>Atracción</th><th>Qué es</th><th>Por qué no está priorizada</th></tr></thead>
+          <tbody>
+            <tr><td><span class="priority p-med">Media optativa</span></td><td>Spaceship Earth</td><td>Paseo lento dentro de la esfera de EPCOT sobre la historia de la comunicación.</td><td>Buena si hay tiempo, pero no desplaza Guardians, Remy, Soarin y Frozen.</td></tr>
+            <tr><td><span class="priority p-med">Media optativa</span></td><td>Mission: SPACE Green Mission</td><td>Simulador espacial más suave, orbitando la Tierra.</td><td>Solo Green; hacer si hay poca espera y ganas.</td></tr>
+            <tr><td><span class="priority p-no">No recomendada</span></td><td>Mission: SPACE Orange Mission</td><td>Simulador espacial más intenso con centrifugadora.</td><td>No recomendada por mareo/intensidad.</td></tr>
+            <tr><td><span class="priority p-opt">Optativa</span></td><td>Test Track</td><td>Atracción de autos con velocidad.</td><td>No es prioridad temática.</td></tr>
+            <tr><td><span class="priority p-opt">Optativa</span></td><td>Living with the Land</td><td>Paseo suave por invernaderos.</td><td>Útil para descansar, pero secundaria.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="note">Tip Skyliner: si sobra tiempo, usarlo como paseo desde EPCOT International Gateway. No sirve para volver directo a All-Star Sports.</div>
+      <div class="footer-nav"><a class="btn" href="#dia-26">← Día anterior</a><a class="btn primary" href="#dia-28">Siguiente día →</a></div>
+    </section>
+
+    <!-- DAY 28 -->
+    <section id="dia-28" class="section-card day">
+      <div class="day-title">
+        <div class="date-badge"><span>Sep</span><span>28</span></div>
+        <div class="day-heading">
+          <h2>Lunes 28/09 · Magic Kingdom</h2>
+          <p>Objetivo: TRON + clásicos seleccionados + castillo + fuegos.</p>
+        </div>
+      </div>
+      <div class="links">
+        <a class="link-chip" target="_blank" href="https://disneyworld.disney.go.com/destinations/magic-kingdom/">Magic Kingdom oficial</a>
+        <a class="link-chip" target="_blank" href="https://disneyworld.disney.go.com/attractions/magic-kingdom/tron-lightcycle-run/">TRON</a>
+        <a class="link-chip" target="_blank" href="https://disneyworld.disney.go.com/entertainment/magic-kingdom/happily-ever-after-fireworks/">Fuegos artificiales</a>
+      </div>
+      <div class="timeline">
+        <div class="time-item"><span class="time">Muy temprano</span><strong>Llegar para Early Entry.</strong></div>
+        <div class="time-item"><span class="time">Primero</span><strong>TRON Lightcycle / Run.</strong></div>
+        <div class="time-item"><span class="time">Después</span><strong>Seven Dwarfs Mine Train.</strong></div>
+        <div class="time-item"><span class="time">Media mañana</span><strong>Peter Pan’s Flight si la fila acompaña.</strong></div>
+        <div class="time-item"><span class="time">Mediodía</span><strong>Almuerzo quick service.</strong></div>
+        <div class="time-item"><span class="time">Tarde</span><strong>Pirates of the Caribbean.</strong></div>
+        <div class="time-item"><span class="time">Tarde</span><strong>Haunted Mansion.</strong></div>
+        <div class="time-item"><span class="time">Tarde/noche</span><strong>Fotos PhotoPass frente al castillo.</strong></div>
+        <div class="time-item"><span class="time">Noche</span><strong>Fuegos artificiales.</strong></div>
+        <div class="time-item"><span class="time">Post cierre</span><strong>Kiss Goodnight si se da.</strong><small>Quedarse unos minutos frente al castillo si no están agotados.</small></div>
+      </div>
+      <h3>Atracciones del día</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Prioridad</th><th>Atracción</th><th>Qué es</th></tr></thead>
+          <tbody>
+            <tr><td><span class="priority p-high">Alta</span></td><td>TRON Lightcycle / Run</td><td>Montaña rusa futurista tipo moto, rápida y muy visual.</td></tr>
+            <tr><td><span class="priority p-high">Alta</span></td><td>Seven Dwarfs Mine Train</td><td>Montaña rusa familiar de Blancanieves, suave y popular.</td></tr>
+            <tr><td><span class="priority p-med">Media</span></td><td>Peter Pan’s Flight</td><td>Paseo clásico y suave por escenas de Peter Pan.</td></tr>
+            <tr><td><span class="priority p-high">Alta</span></td><td>Pirates of the Caribbean</td><td>Paseo en bote por escenas de piratas.</td></tr>
+            <tr><td><span class="priority p-high">Alta</span></td><td>Haunted Mansion</td><td>Mansión embrujada, más misteriosa/divertida que terrorífica.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Atracciones no priorizadas</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Prioridad</th><th>Atracción</th><th>Qué es</th><th>Por qué no está priorizada</th></tr></thead>
+          <tbody>
+            <tr><td><span class="priority p-opt">Optativa</span></td><td>Big Thunder Mountain</td><td>Montaña rusa familiar tipo tren minero.</td><td>Fuera del principal para no cargar con montañas rusas.</td></tr>
+            <tr><td><span class="priority p-opt">Optativa</span></td><td>Jungle Cruise</td><td>Paseo en bote con humor.</td><td>Clásica, pero no prioritaria.</td></tr>
+            <tr><td><span class="priority p-opt">Optativa</span></td><td>Space Mountain</td><td>Montaña rusa en oscuridad.</td><td>Más brusca; TRON cubre mejor esa experiencia.</td></tr>
+            <tr><td><span class="priority p-opt">Optativa</span></td><td>Buzz Lightyear</td><td>Juego familiar de disparos.</td><td>Buena si hay poca fila.</td></tr>
+            <tr><td><span class="priority p-opt">Optativa</span></td><td>It’s a Small World</td><td>Paseo clásico tranquilo.</td><td>Solo si quieren algo suave y con poca espera.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="footer-nav"><a class="btn" href="#dia-27">← Día anterior</a><a class="btn primary" href="#dia-29">Siguiente día →</a></div>
+    </section>
+
+    <!-- DAY 29 -->
+    <section id="dia-29" class="section-card day">
+      <div class="day-title">
+        <div class="date-badge"><span>Sep</span><span>29</span></div>
+        <div class="day-heading">
+          <h2>Martes 29/09 · Cambio Disney → Universal</h2>
+          <p>Objetivo: cambio de hotel, descanso y preparar Universal.</p>
+        </div>
+      </div>
+      <div class="timeline">
+        <div class="time-item"><span class="time">Mañana</span><strong>Desayuno y check-out sin apuro.</strong></div>
+        <div class="time-item"><span class="time">Media mañana</span><strong>Uber/transfer hacia Universal Stella Nova.</strong></div>
+        <div class="time-item"><span class="time">Mediodía</span><strong>Dejar equipaje o check-in si está disponible.</strong></div>
+        <div class="time-item"><span class="time">Tarde</span><strong>Descanso, pileta o compras livianas.</strong></div>
+        <div class="time-item"><span class="time">Alternativa</span><strong>Orlando Marketplace, The Loop o Walmart.</strong></div>
+        <div class="time-item"><span class="time">Noche</span><strong>Universal CityWalk, cena tranquila y dormir temprano.</strong></div>
+      </div>
+      <div class="success">Mickey’s Not-So-Scary Halloween Party quedó descartada. Este día queda como recuperación estratégica antes de Universal.</div>
+      <div class="footer-nav"><a class="btn" href="#dia-28">← Día anterior</a><a class="btn primary" href="#dia-30">Siguiente día →</a></div>
+    </section>
+
+    <!-- DAY 30 -->
+    <section id="dia-30" class="section-card day">
+      <div class="day-title">
+        <div class="date-badge"><span>Sep</span><span>30</span></div>
+        <div class="day-heading">
+          <h2>Miércoles 30/09 · Universal Studios + Islands of Adventure</h2>
+          <p>Objetivo: Harry Potter clásico — Hogsmeade, Hogwarts y Diagon Alley.</p>
+        </div>
+      </div>
+      <div class="links">
+        <a class="link-chip" target="_blank" href="https://www.universalorlando.com/web/es/us/universal-orlando-resort/the-wizarding-world-of-harry-potter/hub">Wizarding World</a>
+        <a class="link-chip" target="_blank" href="https://www.universalorlando.com/web/en/us/things-to-do/rides-attractions/hagrids-magical-creatures-motorbike-adventure">Hagrid’s</a>
+        <a class="link-chip" target="_blank" href="https://www.universalorlando.com/web/en/us/things-to-do/rides-attractions/hogwarts-express">Hogwarts Express</a>
+      </div>
+      <div class="timeline">
+        <div class="time-item"><span class="time">Muy temprano</span><strong>Shuttle desde Stella Nova.</strong></div>
+        <div class="time-item"><span class="time">Early Park Admission</span><strong>Si Islands abre temprano, ir directo a Hagrid’s.</strong></div>
+        <div class="time-item"><span class="time">Mañana</span><strong>Hogsmeade + Hagrid’s + Forbidden Journey.</strong></div>
+        <div class="time-item"><span class="time">Media mañana</span><strong>Castle Walk si quieren recorrer Hogwarts sin subirse.</strong></div>
+        <div class="time-item"><span class="time">Mediodía</span><strong>Three Broomsticks o Leaky Cauldron.</strong></div>
+        <div class="time-item"><span class="time">Tarde</span><strong>Hogwarts Express hacia Universal Studios.</strong></div>
+        <div class="time-item"><span class="time">Tarde</span><strong>Londres: cabina 62442, Knight Bus, 12 Grimmauld Place/Kreacher.</strong></div>
+        <div class="time-item"><span class="time">Tarde</span><strong>Diagon Alley: Gringotts, dragón, tiendas y Money Exchange.</strong></div>
+        <div class="time-item"><span class="time">Tarde/noche</span><strong>Transformers y Men in Black si acompañan tiempos.</strong></div>
+      </div>
+      <h3>Atracciones del día</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Prioridad</th><th>Atracción / experiencia</th><th>Qué es</th></tr></thead>
+          <tbody>
+            <tr><td><span class="priority p-high">Alta</span></td><td>Hagrid’s Magical Creatures Motorbike Adventure</td><td>Montaña rusa temática de Hagrid con moto, criaturas y sorpresas.</td></tr>
+            <tr><td><span class="priority p-high">Alta</span></td><td>Forbidden Journey</td><td>Atracción dentro del castillo de Hogwarts con movimiento, pantallas y escenas mágicas.</td></tr>
+            <tr><td><span class="priority p-high">Alta</span></td><td>Castle Walk</td><td>Recorrido del castillo sin subirse a Forbidden Journey.</td></tr>
+            <tr><td><span class="priority p-high">Alta</span></td><td>Hogwarts Express</td><td>Tren entre Hogsmeade y Diagon Alley; hacerlo en ambos sentidos.</td></tr>
+            <tr><td><span class="priority p-high">Alta</span></td><td>Escape from Gringotts</td><td>Atracción de HP dentro del banco Gringotts, con pantallas y coaster suave.</td></tr>
+            <tr><td><span class="priority p-high">Alta</span></td><td>Diagon Alley / Hogsmeade</td><td>Zonas inmersivas de Harry Potter con tiendas, comida, fotos y detalles ocultos.</td></tr>
+            <tr><td><span class="priority p-med">Alta/media</span></td><td>Men in Black Alien Attack</td><td>Juego competitivo disparando a aliens desde un vehículo.</td></tr>
+            <tr><td><span class="priority p-high">Alta</span></td><td>Transformers 3D</td><td>Simulador de acción con robots, pantallas y movimiento.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Atracciones no priorizadas</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Prioridad</th><th>Atracción</th><th>Qué es</th><th>Por qué no está priorizada</th></tr></thead>
+          <tbody>
+            <tr><td><span class="priority p-med">Media</span></td><td>Revenge of the Mummy</td><td>Coaster indoor con oscuridad, momias y aceleraciones.</td><td>La dejamos media por intensidad.</td></tr>
+            <tr><td><span class="priority p-med">Media/baja</span></td><td>Despicable Me Minion Mayhem</td><td>Simulador familiar de Minions.</td><td>Divertida, pero no indispensable.</td></tr>
+            <tr><td><span class="priority p-med">Media/baja</span></td><td>Villain-Con Minion Blast</td><td>Experiencia interactiva de Minions.</td><td>Solo si hay poca fila.</td></tr>
+            <tr><td><span class="priority p-opt">Optativa</span></td><td>The Simpsons Ride</td><td>Simulador de Los Simpson.</td><td>Puede marear bastante.</td></tr>
+            <tr><td><span class="priority p-opt">Optativa</span></td><td>E.T. Adventure</td><td>Paseo clásico tranquilo.</td><td>Nostálgica, pero secundaria.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Tips Harry Potter</h3>
+      <div class="checklist">
+        <div class="check"><input type="checkbox" id="hp-1"><label for="hp-1">Comprar o usar varita interactiva desde el primer día Universal.</label></div>
+        <div class="check"><input type="checkbox" id="hp-2"><label for="hp-2">Cabina de King’s Cross: marcar 62442.</label></div>
+        <div class="check"><input type="checkbox" id="hp-3"><label for="hp-3">Buscar el Knight Bus.</label></div>
+        <div class="check"><input type="checkbox" id="hp-4"><label for="hp-4">Mirar 12 Grimmauld Place para ver a Kreacher.</label></div>
+        <div class="check"><input type="checkbox" id="hp-5"><label for="hp-5">Esperar el fuego del dragón de Gringotts.</label></div>
+        <div class="check"><input type="checkbox" id="hp-6"><label for="hp-6">Borgin and Burkes: Armario Evanescente y baúl de Ojo Loco Moody.</label></div>
+        <div class="check"><input type="checkbox" id="hp-7"><label for="hp-7">Weasleys’ Wizard Wheezes y espejo de Madam Malkin.</label></div>
+        <div class="check"><input type="checkbox" id="hp-8"><label for="hp-8">Gringotts Money Exchange: cambiar poco dinero como recuerdo.</label></div>
+      </div>
+      <div class="footer-nav"><a class="btn" href="#dia-29">← Día anterior</a><a class="btn primary" href="#dia-01">Siguiente día →</a></div>
+    </section>
+
+    <!-- DAY 01 -->
+    <section id="dia-01" class="section-card day">
+      <div class="day-title">
+        <div class="date-badge"><span>Oct</span><span>01</span></div>
+        <div class="day-heading">
+          <h2>Jueves 01/10 · Epic Universe</h2>
+          <p>Objetivo: Ministry of Magic + Super Nintendo World.</p>
+        </div>
+      </div>
+      <div class="links">
+        <a class="link-chip" target="_blank" href="https://www.universalorlando.com/web/en/us/epic-universe">Epic Universe</a>
+        <a class="link-chip" target="_blank" href="https://www.universalorlando.com/web/en/us/epic-universe/worlds/the-wizarding-world-of-harry-potter-ministry-of-magic">Ministry of Magic</a>
+        <a class="link-chip" target="_blank" href="https://www.universalorlando.com/web/es/us/epic-universe/worlds/super-nintendo-world">Super Nintendo World</a>
+      </div>
+      <div class="timeline">
+        <div class="time-item"><span class="time">Muy temprano</span><strong>Shuttle / llegada para apertura.</strong></div>
+        <div class="time-item"><span class="time">Primero</span><strong>Ministry of Magic.</strong></div>
+        <div class="time-item"><span class="time">Mañana</span><strong>Battle at the Ministry.</strong></div>
+        <div class="time-item"><span class="time">Media mañana</span><strong>Place Cachée, portal, tiendas y detalles.</strong></div>
+        <div class="time-item"><span class="time">Mediodía</span><strong>Almuerzo dentro de Epic.</strong></div>
+        <div class="time-item"><span class="time">Tarde</span><strong>Super Nintendo World.</strong></div>
+        <div class="time-item"><span class="time">Tarde</span><strong>Mario Kart.</strong></div>
+        <div class="time-item"><span class="time">Tarde</span><strong>Mine-Cart Madness.</strong></div>
+        <div class="time-item"><span class="time">Tarde/noche</span><strong>Yoshi’s Adventure si hay poca espera.</strong></div>
+      </div>
+      <h3>Atracciones del día</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Prioridad</th><th>Atracción / zona</th><th>Qué es</th></tr></thead>
+          <tbody>
+            <tr><td><span class="priority p-high">Alta</span></td><td>Ministry of Magic</td><td>Mundo mágico de Harry Potter en Epic, con París mágico y Ministerio.</td></tr>
+            <tr><td><span class="priority p-high">Alta</span></td><td>Battle at the Ministry</td><td>Atracción principal de Harry Potter en Epic Universe.</td></tr>
+            <tr><td><span class="priority p-high">Alta</span></td><td>Portal del Ministerio</td><td>Experiencia visual; intentar cruzarlo cuando el número esté encendido.</td></tr>
+            <tr><td><span class="priority p-high">Alta</span></td><td>Super Nintendo World</td><td>Zona inmersiva de Mario, Bowser, Donkey Kong, bloques y juegos.</td></tr>
+            <tr><td><span class="priority p-high">Alta</span></td><td>Mario Kart: Bowser’s Challenge</td><td>Atracción interactiva con realidad aumentada.</td></tr>
+            <tr><td><span class="priority p-med">Alta/media</span></td><td>Mine-Cart Madness</td><td>Atracción de Donkey Kong con carrito minero.</td></tr>
+            <tr><td><span class="priority p-med">Media</span></td><td>Yoshi’s Adventure</td><td>Paseo tranquilo y familiar.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Atracciones no priorizadas</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Prioridad</th><th>Atracción</th><th>Qué es</th><th>Por qué no está priorizada</th></tr></thead>
+          <tbody>
+            <tr><td><span class="priority p-opt">Optativa</span></td><td>Stardust Racers</td><td>Montaña rusa fuerte de Celestial Park.</td><td>Fuera por intensidad.</td></tr>
+            <tr><td><span class="priority p-opt">Optativa</span></td><td>Monsters Unchained</td><td>Atracción oscura de monstruos clásicos.</td><td>Puede ser intensa y no es prioridad temática.</td></tr>
+            <tr><td><span class="priority p-opt">Optativa</span></td><td>Isle of Berk</td><td>Zona de How to Train Your Dragon.</td><td>Puede ser linda si sobra tiempo, pero HP y Nintendo mandan.</td></tr>
+            <tr><td><span class="priority p-opt">Optativa</span></td><td>Dark Universe</td><td>Zona de monstruos.</td><td>Solo para recorrer si interesa la ambientación.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="warning">Express opcional: único día Universal donde lo consideraría, dependiendo del precio real.</div>
+      <div class="footer-nav"><a class="btn" href="#dia-30">← Día anterior</a><a class="btn primary" href="#dia-02">Siguiente día →</a></div>
+    </section>
+
+    <!-- DAY 02 -->
+    <section id="dia-02" class="section-card day">
+      <div class="day-title">
+        <div class="date-badge"><span>Oct</span><span>02</span></div>
+        <div class="day-heading">
+          <h2>Viernes 02/10 · Universal / Islands repetición estratégica</h2>
+          <p>Objetivo: repetir favoritos y cerrar pendientes.</p>
+        </div>
+      </div>
+      <div class="timeline">
+        <div class="time-item"><span class="time">Muy temprano</span><strong>Repetir Hagrid’s si conviene.</strong></div>
+        <div class="time-item"><span class="time">Mañana</span><strong>Completar Hogsmeade / Hogwarts / Forbidden Journey / Castle Walk.</strong></div>
+        <div class="time-item"><span class="time">Media mañana</span><strong>The Amazing Adventures of Spider-Man.</strong></div>
+        <div class="time-item"><span class="time">Mediodía</span><strong>Almuerzo en Three Broomsticks, Leaky Cauldron o CityWalk.</strong></div>
+        <div class="time-item"><span class="time">Tarde</span><strong>Men in Black, Transformers, Bourne Stuntacular.</strong></div>
+        <div class="time-item"><span class="time">Tarde</span><strong>Revenge of the Mummy si se animan.</strong></div>
+        <div class="time-item"><span class="time">Tarde</span><strong>Jurassic Park River Adventure optativa.</strong><small>Llevar poncho: se pueden mojar.</small></div>
+        <div class="time-item"><span class="time">Noche</span><strong>Última vuelta por CityWalk y compras Universal.</strong></div>
+      </div>
+      <h3>Atracciones del día</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Prioridad</th><th>Atracción</th><th>Qué es</th></tr></thead>
+          <tbody>
+            <tr><td><span class="priority p-high">Alta</span></td><td>Spider-Man</td><td>Simulador 3D/4D con movimiento y efectos. Muy recomendable.</td></tr>
+            <tr><td><span class="priority p-high">Alta</span></td><td>Hagrid’s / HP pendientes</td><td>Repetición o pendientes de Harry Potter.</td></tr>
+            <tr><td><span class="priority p-med">Alta/media</span></td><td>Men in Black</td><td>Juego familiar competitivo.</td></tr>
+            <tr><td><span class="priority p-high">Alta</span></td><td>Transformers</td><td>Simulador de acción.</td></tr>
+            <tr><td><span class="priority p-med">Media/alta</span></td><td>Bourne Stuntacular</td><td>Show de acción con acrobacias y pantallas.</td></tr>
+            <tr><td><span class="priority p-med">Media</span></td><td>Revenge of the Mummy</td><td>Coaster indoor oscura, más intensa.</td></tr>
+            <tr><td><span class="priority p-opt">Optativa/media</span></td><td>Jurassic Park River Adventure</td><td>Paseo en bote con dinosaurios y caída final; se pueden mojar.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Atracciones no priorizadas</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Prioridad</th><th>Atracción</th><th>Qué es</th><th>Por qué no está priorizada</th></tr></thead>
+          <tbody>
+            <tr><td><span class="priority p-opt">Optativa</span></td><td>VelociCoaster</td><td>Montaña rusa muy fuerte.</td><td>Fuera por intensidad.</td></tr>
+            <tr><td><span class="priority p-opt">Optativa</span></td><td>Hulk Coaster</td><td>Montaña rusa intensa de Marvel.</td><td>Fuera por intensidad.</td></tr>
+            <tr><td><span class="priority p-opt">Optativa</span></td><td>Skull Island: Reign of Kong</td><td>Aventura oscura con King Kong.</td><td>Puede hacerse si sobra tiempo.</td></tr>
+            <tr><td><span class="priority p-opt">Optativa</span></td><td>Popeye & Bluto’s</td><td>Atracción de agua.</td><td>Se mojan muchísimo.</td></tr>
+            <tr><td><span class="priority p-opt">Optativa</span></td><td>Dudley Do-Right</td><td>Atracción de agua con caída.</td><td>Se mojan mucho y no es prioridad.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="footer-nav"><a class="btn" href="#dia-01">← Día anterior</a><a class="btn primary" href="#dia-03">Siguiente día →</a></div>
+    </section>
+
+    <!-- DAY 03 -->
+    <section id="dia-03" class="section-card day">
+      <div class="day-title">
+        <div class="date-badge"><span>Oct</span><span>03</span></div>
+        <div class="day-heading">
+          <h2>Sábado 03/10 · Cambio a Ramada + NBA / compras</h2>
+          <p>Objetivo: momento NBA liviano + compras.</p>
+        </div>
+      </div>
+      <div class="links">
+        <a class="link-chip" target="_blank" href="https://www.kiacenter.com/plan-your-visit/team-shop">Orlando Magic Team Shop</a>
+        <a class="link-chip" target="_blank" href="https://www.kiacenter.com/events/orlando-magic">Eventos Orlando Magic</a>
+      </div>
+      <div class="timeline">
+        <div class="time-item"><span class="time">Mañana</span><strong>Check-out Stella Nova.</strong></div>
+        <div class="time-item"><span class="time">Media mañana</span><strong>Uber al Ramada Plaza; dejar equipaje.</strong></div>
+        <div class="time-item"><span class="time">11:00 / 12:30</span><strong>Kia Center / Orlando Magic Team Shop.</strong></div>
+        <div class="time-item"><span class="time">Mediodía</span><strong>Almuerzo por Downtown o zona cercana.</strong></div>
+        <div class="time-item"><span class="time">Tarde</span><strong>Compras: Walmart, Orlando Marketplace o The Loop.</strong></div>
+        <div class="time-item"><span class="time">Noche</span><strong>Descanso o Disney Springs si hay energía.</strong></div>
+      </div>
+      <div class="note">Por ahora no aparecen partidos compatibles con sus fechas. Mantener monitoreo por si aparece open practice, fan event o evento público.</div>
+      <div class="footer-nav"><a class="btn" href="#dia-02">← Día anterior</a><a class="btn primary" href="#dia-04">Siguiente día →</a></div>
+    </section>
+
+    <!-- DAY 04 -->
+    <section id="dia-04" class="section-card day">
+      <div class="day-title">
+        <div class="date-badge"><span>Oct</span><span>04</span></div>
+        <div class="day-heading">
+          <h2>Domingo 04/10 · Disney Springs / descanso</h2>
+          <p>Objetivo: paseo lindo, compras y fotos sin parque.</p>
+        </div>
+      </div>
+      <div class="links">
+        <a class="link-chip" target="_blank" href="https://disneyworld.disney.go.com/destinations/disney-springs/">Disney Springs oficial</a>
+        <a class="link-chip" target="_blank" href="https://disneyworld.disney.go.com/shops/disney-springs/disney-photopass-studio/">PhotoPass Studio</a>
+      </div>
+      <div class="timeline">
+        <div class="time-item"><span class="time">Mañana</span><strong>Dormir un poco más.</strong></div>
+        <div class="time-item"><span class="time">Mediodía</span><strong>Disney Springs.</strong></div>
+        <div class="time-item"><span class="time">Tarde</span><strong>World of Disney, Lego Store, paseo y compras.</strong></div>
+        <div class="time-item"><span class="time">Tarde</span><strong>PhotoPass Studio si quieren fotos familiares extra.</strong></div>
+        <div class="time-item"><span class="time">Noche</span><strong>Cena tranquila o regreso al hotel.</strong></div>
+      </div>
+      <h3>Opciones no priorizadas</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Prioridad</th><th>Lugar</th><th>Qué es</th><th>Por qué no está priorizado</th></tr></thead>
+          <tbody>
+            <tr><td><span class="priority p-opt">Optativa</span></td><td>Icon Park</td><td>Zona turística con rueda gigante, restaurantes y atracciones.</td><td>Puede ser interesante, pero quizás estén cansados.</td></tr>
+            <tr><td><span class="priority p-opt">Optativa</span></td><td>Lake Eola Park</td><td>Parque urbano con lago.</td><td>Lindo, pero menos temático.</td></tr>
+            <tr><td><span class="priority p-opt">Optativa</span></td><td>Celebration</td><td>Barrio diseñado originalmente por Disney.</td><td>Buen paseo tranquilo si quieren algo distinto.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="footer-nav"><a class="btn" href="#dia-03">← Día anterior</a><a class="btn primary" href="#dia-05">Siguiente día →</a></div>
+    </section>
+
+    <!-- DAY 05 -->
+    <section id="dia-05" class="section-card day">
+      <div class="day-title">
+        <div class="date-badge"><span>Oct</span><span>05</span></div>
+        <div class="day-heading">
+          <h2>Lunes 05/10 · Día flexible Orlando</h2>
+          <p>Objetivo: elegir según energía real.</p>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Prioridad</th><th>Plan</th><th>Qué es</th></tr></thead>
+          <tbody>
+            <tr><td><span class="priority p-high">Alta si faltan compras</span></td><td>The Loop / Orlando Marketplace / Walmart</td><td>Compras finales, ropa, regalos y básicos.</td></tr>
+            <tr><td><span class="priority p-high">Alta si quieren paseo lindo</span></td><td>Winter Park / Park Avenue</td><td>Cafeterías, tiendas, paseo arbolado y fotos.</td></tr>
+            <tr><td><span class="priority p-med">Media</span></td><td>Celebration + Icon Park</td><td>Paseo tranquilo + zona turística.</td></tr>
+            <tr><td><span class="priority p-med">Media</span></td><td>Lake Eola Park</td><td>Parque urbano para caminar y bajar ritmo.</td></tr>
+            <tr><td><span class="priority p-opt">Baja</span></td><td>Otro parque extra</td><td>No recomendado salvo que estén con mucha energía.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="note">Este día conviene dejarlo abierto. Después de Disney + Universal + Epic, el comodín vale mucho.</div>
+      <div class="footer-nav"><a class="btn" href="#dia-04">← Día anterior</a><a class="btn primary" href="#dia-06">Siguiente día →</a></div>
+    </section>
+
+    <!-- DAY 06 -->
+    <section id="dia-06" class="section-card day">
+      <div class="day-title">
+        <div class="date-badge"><span>Oct</span><span>06</span></div>
+        <div class="day-heading">
+          <h2>Martes 06/10 · Regreso</h2>
+          <p>Vuelo a las 14:00. Objetivo: salir con margen.</p>
+        </div>
+      </div>
+      <div class="timeline">
+        <div class="time-item"><span class="time">07:30</span><strong>Desayuno.</strong></div>
+        <div class="time-item"><span class="time">08:30</span><strong>Cerrar valijas.</strong></div>
+        <div class="time-item"><span class="time">09:30 / 10:00</span><strong>Check-out.</strong></div>
+        <div class="time-item"><span class="time">10:00 / 10:15</span><strong>Uber/transfer al aeropuerto.</strong></div>
+        <div class="time-item"><span class="time">11:00</span><strong>Llegada a MCO.</strong></div>
+        <div class="time-item"><span class="time">14:00</span><strong>Vuelo de regreso.</strong></div>
+      </div>
+      <div class="footer-nav"><a class="btn" href="#dia-05">← Día anterior</a><a class="btn primary" href="#top">Volver arriba ↑</a></div>
+    </section>
+
+    <section id="links" class="section-card">
+      <h2>🔗 Links útiles de ampliación</h2>
+      <div class="grid three">
+        <div class="mini-card">
+          <h4>Disney</h4>
+          <div class="links">
+            <a class="link-chip" target="_blank" href="https://disneyworld.disney.go.com/es-us/">Disney World oficial</a>
+            <a class="link-chip" target="_blank" href="https://disneyworld.disney.go.com/es-us/memory-maker/">Memory Maker</a>
+            <a class="link-chip" target="_blank" href="https://disneyworld.disney.go.com/es-us/lightning-lane-passes/">Lightning Lane</a>
+            <a class="link-chip" target="_blank" href="https://disneyworld.disney.go.com/guest-services/early-entry/">Early Entry</a>
+            <a class="link-chip" target="_blank" href="https://disneyworld.disney.go.com/es-us/guest-services/disney-skyliner/">Disney Skyliner</a>
+          </div>
+        </div>
+        <div class="mini-card">
+          <h4>Universal</h4>
+          <div class="links">
+            <a class="link-chip" target="_blank" href="https://www.universalorlando.com/web/es/us">Universal Orlando oficial</a>
+            <a class="link-chip" target="_blank" href="https://www.universalorlando.com/web/es/us/my-universal-photo">My Universal Photos</a>
+            <a class="link-chip" target="_blank" href="https://www.universalorlando.com/web/en/us/tickets-packages/express-passes">Universal Express</a>
+            <a class="link-chip" target="_blank" href="https://www.universalorlando.com/web/en/us/places-to-stay/universal-stella-nova-resort">Stella Nova Resort</a>
+            <a class="link-chip" target="_blank" href="https://www.universalorlando.com/web/es/us/early-park-admission">Early Park Admission</a>
+          </div>
+        </div>
+        <div class="mini-card">
+          <h4>Orlando / transporte / NBA</h4>
+          <div class="links">
+            <a class="link-chip" target="_blank" href="https://flymco.com/ground-transportation/ride-share/">MCO Ride Share</a>
+            <a class="link-chip" target="_blank" href="https://www.kiacenter.com/events/orlando-magic">Orlando Magic eventos</a>
+            <a class="link-chip" target="_blank" href="https://www.kiacenter.com/plan-your-visit/team-shop">Magic Team Shop</a>
+            <a class="link-chip" target="_blank" href="https://www.google.com/maps/search/?api=1&query=8990+Turkey+Lake+Rd+Orlando+FL+32819">Walmart Turkey Lake</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="progress-box" aria-live="polite">
+    <span class="progress-dot"></span>
+    <span id="progressText">Checklist: 0% completo</span>
+  </div>
+
+  <script>
+    const checks = Array.from(document.querySelectorAll('input[type="checkbox"]'));
+
+    function saveCheck(el) {
+      localStorage.setItem('orlando2026_' + el.id, el.checked ? '1' : '0');
+      updateProgress();
+    }
+
+    function loadChecks() {
+      checks.forEach(el => {
+        const val = localStorage.getItem('orlando2026_' + el.id);
+        if (val === '1') el.checked = true;
+        el.addEventListener('change', () => saveCheck(el));
+      });
+      updateProgress();
+    }
+
+    function updateProgress() {
+      const total = checks.length;
+      const done = checks.filter(c => c.checked).length;
+      const pct = total ? Math.round(done / total * 100) : 0;
+      document.getElementById('progressText').textContent = `Checklist: ${pct}% completo (${done}/${total})`;
+    }
+
+    function resetChecks() {
+      if (!confirm('¿Reiniciar todas las casillas marcadas?')) return;
+      checks.forEach(el => {
+        el.checked = false;
+        localStorage.removeItem('orlando2026_' + el.id);
+      });
+      updateProgress();
+    }
+
+    loadChecks();
+  </script>
+</body>
+</html>

@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Cronograma Orlando 2026 · Colapsable</title>
+<title>Cronograma Orlando 2026 · Buscador fijo</title>
 <style>
     :root {
       --bg: #f6f8fb;
@@ -649,15 +649,193 @@
       .btn { width: 100%; }
     }
 
+
+
+    .search-panel {
+      margin-top: 16px;
+      background: rgba(255,255,255,.14);
+      border: 1px solid rgba(255,255,255,.28);
+      border-radius: 18px;
+      padding: 12px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .search-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .search-input {
+      flex: 1 1 260px;
+      min-height: 44px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.4);
+      padding: 0 16px;
+      font-size: 15px;
+      outline: none;
+      background: rgba(255,255,255,.96);
+      color: var(--ink);
+    }
+
+    .search-input:focus {
+      box-shadow: 0 0 0 4px rgba(255,255,255,.22);
+    }
+
+    .search-help {
+      font-size: 13px;
+      color: rgba(255,255,255,.88);
+    }
+
+    #searchStatus {
+      font-size: 13px;
+      color: rgba(255,255,255,.95);
+      font-weight: 650;
+    }
+
+    .search-match {
+      outline: 3px solid rgba(245, 158, 11, .75);
+      background: #fff7e6 !important;
+      border-radius: 12px;
+      scroll-margin-top: 112px;
+    }
+
+    .search-current {
+      outline: 4px solid var(--brand) !important;
+      box-shadow: 0 0 0 7px rgba(39, 94, 254, .18);
+    }
+
+    @media (max-width: 640px) {
+      .search-panel { border-radius: 14px; }
+      .search-row .btn { flex: 1 1 auto; justify-content: center; }
+    }
+
     @media print {
-      .topbar, .progress-box, .printbar, .footer-nav { display: none; }
+      .topbar, .progress-box, .printbar, .footer-nav, .search-panel { display: none; }
       body { background: white; }
       .section-card { box-shadow: none; page-break-inside: avoid; }
       a { color: inherit; text-decoration: none; }
       header.hero { color: #000; background: #fff; border-bottom: 2px solid #000; }
       .meta-card { color: #000; border: 1px solid #aaa; background: #fff; }
     }
-  </style>
+  
+
+    /* v6: buscador fijo integrado a la barra de navegación */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 80;
+      background: rgba(255,255,255,.96);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 8px 22px rgba(24,32,47,.08);
+    }
+
+    .topbar-search {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 9px 16px 4px;
+      display: grid;
+      gap: 5px;
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+    }
+
+    .topbar-search .search-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: nowrap;
+      align-items: center;
+    }
+
+    .topbar-search .search-input {
+      flex: 1 1 auto;
+      min-width: 180px;
+      min-height: 38px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      padding: 0 14px;
+      font-size: 14px;
+      outline: none;
+      background: #fff;
+      color: var(--ink);
+      box-shadow: 0 3px 10px rgba(24,32,47,.04);
+    }
+
+    .topbar-search .search-input:focus {
+      border-color: #9bb2ff;
+      box-shadow: 0 0 0 4px rgba(39,94,254,.12);
+    }
+
+    .topbar-search .btn {
+      width: auto;
+      min-height: 38px;
+      padding: 8px 11px;
+      white-space: nowrap;
+      flex: 0 0 auto;
+    }
+
+    .search-status-row {
+      justify-content: space-between;
+      color: var(--muted);
+      line-height: 1.15;
+    }
+
+    .topbar-search #searchStatus {
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 750;
+    }
+
+    .topbar-search .search-help {
+      font-size: 12px;
+      color: var(--muted);
+      text-align: right;
+    }
+
+    .topbar-inner {
+      padding-top: 5px;
+      padding-bottom: 9px;
+      border-top: 1px solid rgba(223,229,239,.8);
+    }
+
+    section { scroll-margin-top: 148px; }
+    .search-match { scroll-margin-top: 170px; }
+
+    @media (max-width: 640px) {
+      .topbar-search { padding: 8px 10px 4px; }
+      .topbar-search .search-row:first-child {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto auto auto;
+        gap: 6px;
+      }
+      .topbar-search .search-input {
+        min-width: 0;
+        min-height: 36px;
+        font-size: 13px;
+        padding: 0 11px;
+      }
+      .topbar-search .btn {
+        min-height: 36px;
+        padding: 7px 9px;
+        border-radius: 12px;
+        font-size: 12px;
+      }
+      .topbar-search .btn .long-label { display: none; }
+      .topbar-search .search-help { display: none; }
+      .topbar-search #searchStatus { font-size: 11px; }
+      .topbar-inner { padding: 4px 10px 8px; }
+      section { scroll-margin-top: 145px; }
+      .search-match { scroll-margin-top: 165px; }
+    }
+
+    @media print {
+      .topbar-search { display: none !important; }
+    }
+</style>
 </head>
 <body>
 <header class="hero" id="top">
@@ -672,12 +850,24 @@
 <div class="meta-card"><small>Movilidad</small><strong>Uber/Lyft · sin auto</strong></div>
 </div>
 <div class="printbar">
-<button class="btn primary" onclick="expandAllCards(); setTimeout(() => window.print(), 100)">🖨️ Imprimir / guardar PDF</button>
+<button class="btn primary" onclick="expandAllCards(); setTimeout(() =&gt; window.print(), 100)">🖨️ Imprimir / guardar PDF</button>
 <button class="btn" onclick="resetChecks()">↩️ Reiniciar checklists</button>
 <button class="btn" id="expandAllBtn" onclick="expandAllCards()" type="button">▾ Abrir todo</button><button class="btn" id="collapseAllBtn" onclick="collapseAllCards()" type="button">▸ Cerrar todo</button></div>
+
 </div>
 </header>
-<nav aria-label="Navegación principal" class="topbar">
+<nav aria-label="Navegación principal" class="topbar"><div aria-label="Buscar dentro del cronograma" class="search-panel topbar-search" role="search">
+<div class="search-row">
+<input aria-label="Buscar en el cronograma" autocomplete="off" class="search-input" id="siteSearch" placeholder="Buscar: Hagrid, Jurassic, Walmart, TRON, pasaportes..." type="search"/>
+<button aria-label="Resultado anterior" class="btn" id="searchPrev" onclick="prevSearchResult()" title="Resultado anterior" type="button">← <span class="long-label">Anterior</span></button>
+<button aria-label="Resultado siguiente" class="btn primary" id="searchNext" onclick="nextSearchResult()" title="Resultado siguiente" type="button"><span class="long-label">Siguiente</span> →</button>
+<button aria-label="Limpiar búsqueda" class="btn" id="clearSearch" onclick="clearSiteSearch()" title="Limpiar búsqueda" type="button">✕ <span class="long-label">Limpiar</span></button>
+</div>
+<div class="search-row search-status-row">
+<span aria-live="polite" id="searchStatus">Buscador listo</span>
+<span class="search-help">Enter = siguiente · se abren las tarjetas con coincidencias</span>
+</div>
+</div>
 <div class="topbar-inner">
 <a class="nav-pill" href="#resumen">🧭 Resumen</a>
 <a class="nav-pill" href="#previaje">✅ Previaje</a>
@@ -701,7 +891,6 @@
 </nav>
 <main>
 <section class="section-card is-collapsed" id="resumen"><div class="collapsible-header"><h2>🧭 Resumen general del viaje</h2><button aria-expanded="false" class="toggle-btn" type="button">Abrir</button></div><div class="collapsible-content" hidden="hidden">
-
 <div class="note">
         Los horarios son orientativos. Más cerca del viaje hay que ajustar con horarios oficiales, Early Entry, Early Park Admission, shows, clima y tiempos reales de espera.
       </div>
@@ -727,7 +916,6 @@
 </div>
 </div></section>
 <section class="section-card is-collapsed" id="previaje"><div class="collapsible-header"><h2>✅ Cronograma previaje</h2><button aria-expanded="false" class="toggle-btn" type="button">Abrir</button></div><div class="collapsible-content" hidden="hidden">
-
 <p>Checklist para seguir antes de salir de Argentina. Las casillas quedan guardadas en este navegador.</p>
 <h3>06/08 al 15/08 · Base administrativa</h3>
 <div class="checklist">
@@ -784,15 +972,12 @@
 </div>
 </div></section>
 <section class="section-card is-collapsed" id="extras"><div class="collapsible-header"><h2>💸 Extras pagos opcionales y recomendados</h2><button aria-expanded="false" class="toggle-btn" type="button">Abrir</button></div><div class="collapsible-content" hidden="hidden">
-
 <div class="grid two">
 <div class="mini-card is-collapsed"><div class="mini-collapsible-header"><h4>📸 Fotos</h4><button aria-expanded="false" class="toggle-btn" type="button">Abrir</button></div><div class="mini-collapsible-content" hidden="hidden">
-
 <p><strong>Comprar:</strong> Memory Maker Disney + My Universal Photos 3-Day.</p>
 <p class="small-muted">Encaja con la idea de disfrutar el viaje sin vivir sacando fotos.</p>
 </div></div>
 <div class="mini-card is-collapsed"><div class="mini-collapsible-header"><h4>⚡ Pases rápidos</h4><button aria-expanded="false" class="toggle-btn" type="button">Abrir</button></div><div class="mini-collapsible-content" hidden="hidden">
-
 <p><strong>Opcional:</strong> Lightning Disney selectivo; Universal Express solo evaluarlo para Epic.</p>
 <p class="small-muted">No compraría Express para Universal/Islands de entrada.</p>
 </div></div>
@@ -816,7 +1001,6 @@
 <div class="note">Recomendación equilibrada: fotos sí; Lightning Disney solo para puntos críticos; Express Universal solo si Epic aparece a precio razonable.</div>
 </div></section>
 <section class="section-card is-collapsed" id="walmart"><div class="collapsible-header"><h2>🛒 Compra inicial en Walmart</h2><button aria-expanded="false" class="toggle-btn" type="button">Abrir</button></div><div class="collapsible-content" hidden="hidden">
-
 <p><strong>Walmart sugerido:</strong> 8990 Turkey Lake Rd, Orlando, FL 32819.</p>
 <div class="links">
 <a class="link-chip" href="https://www.google.com/maps/search/?api=1&amp;query=8990+Turkey+Lake+Rd+Orlando+FL+32819" target="_blank">Abrir en Google Maps</a>
@@ -846,7 +1030,6 @@
 <p>Objetivo: llegar, instalarse, comprar básicos y dormir temprano.</p>
 <div class="card-status">Tocar para abrir/cerrar el día</div></div>
 <button aria-expanded="false" class="toggle-btn" type="button">Abrir</button></div><div class="collapsible-content" hidden="hidden">
-
 <div class="timeline">
 <div class="time-item"><span class="time">14:00</span><strong>Llegada a Orlando.</strong><small>Trámites, equipaje y salida del aeropuerto.</small></div>
 <div class="time-item"><span class="time">15:30 / 16:00</span><strong>Uber XL o Lyft XL a Disney’s All-Star Sports Resort.</strong><small>Para 4 personas con carry-on, mejor XL.</small></div>
@@ -866,7 +1049,6 @@
 <p>Objetivo: Avatar + Safari + primer día llevadero.</p>
 <div class="card-status">Tocar para abrir/cerrar el día</div></div>
 <button aria-expanded="false" class="toggle-btn" type="button">Abrir</button></div><div class="collapsible-content" hidden="hidden">
-
 <div class="links">
 <a class="link-chip" href="https://disneyworld.disney.go.com/destinations/animal-kingdom/" target="_blank">Animal Kingdom oficial</a>
 <a class="link-chip" href="https://disneyworld.disney.go.com/attractions/animal-kingdom/avatar-flight-of-passage/" target="_blank">Avatar Flight of Passage</a>
@@ -902,7 +1084,6 @@
 <tr><td><span class="priority p-med">Media</span></td><td>Finding Nemo</td><td>Show musical indoor.</td><td>Puede servir si hace calor o quieren sentarse.</td><td class="resource-cell"><div class="row-links"><a class="media-chip" href="https://disneyworld.disney.go.com/entertainment/animal-kingdom/finding-nemo-big-blue-and-beyond/" rel="noopener" target="_blank">Info</a><a class="media-chip" href="https://www.youtube.com/results?search_query=Finding+Nemo+Orlando+ride+attraction+POV" rel="noopener" target="_blank">Video</a><a class="media-chip" href="https://www.google.com/search?tbm=isch&amp;q=Finding+Nemo+Orlando+ride+attraction" rel="noopener" target="_blank">Fotos</a></div></td></tr>
 <tr><td><span class="priority p-opt">Optativa</span></td><td>Expedition Everest</td><td>Montaña rusa con tramo hacia atrás.</td><td>Fuera del plan principal por intensidad.</td><td class="resource-cell"><div class="row-links"><a class="media-chip" href="https://disneyworld.disney.go.com/attractions/animal-kingdom/expedition-everest/" rel="noopener" target="_blank">Info</a><a class="media-chip" href="https://www.youtube.com/results?search_query=Expedition+Everest+Orlando+ride+attraction+POV" rel="noopener" target="_blank">Video</a><a class="media-chip" href="https://www.google.com/search?tbm=isch&amp;q=Expedition+Everest+Orlando+ride+attraction" rel="noopener" target="_blank">Fotos</a></div></td></tr>
 <tr><td><span class="priority p-opt">Optativa</span></td><td>Kali River Rapids</td><td>Atracción de agua.</td><td>Se pueden mojar bastante.</td><td class="resource-cell"><div class="row-links"><a class="media-chip" href="https://disneyworld.disney.go.com/attractions/animal-kingdom/kali-river-rapids/" rel="noopener" target="_blank">Info</a><a class="media-chip" href="https://www.youtube.com/results?search_query=Kali+River+Rapids+Orlando+ride+attraction+POV" rel="noopener" target="_blank">Video</a><a class="media-chip" href="https://www.google.com/search?tbm=isch&amp;q=Kali+River+Rapids+Orlando+ride+attraction" rel="noopener" target="_blank">Fotos</a></div></td></tr>
-
 </tbody>
 </table>
 </div>
@@ -916,7 +1097,6 @@
 <p>Objetivo: Star Wars + Toy Story + atracciones familiares.</p>
 <div class="card-status">Tocar para abrir/cerrar el día</div></div>
 <button aria-expanded="false" class="toggle-btn" type="button">Abrir</button></div><div class="collapsible-content" hidden="hidden">
-
 <div class="links">
 <a class="link-chip" href="https://disneyworld.disney.go.com/destinations/hollywood-studios/" target="_blank">Hollywood Studios oficial</a>
 <a class="link-chip" href="https://disneyworld.disney.go.com/attractions/hollywood-studios/star-wars-rise-of-the-resistance/" target="_blank">Rise of the Resistance</a>
@@ -970,7 +1150,6 @@
 <p>Objetivo: Guardians + Remy + Soarin + Frozen + Club Cool.</p>
 <div class="card-status">Tocar para abrir/cerrar el día</div></div>
 <button aria-expanded="false" class="toggle-btn" type="button">Abrir</button></div><div class="collapsible-content" hidden="hidden">
-
 <div class="links">
 <a class="link-chip" href="https://disneyworld.disney.go.com/destinations/epcot/" target="_blank">EPCOT oficial</a>
 <a class="link-chip" href="https://disneyworld.disney.go.com/attractions/epcot/guardians-of-the-galaxy-cosmic-rewind/" target="_blank">Guardians</a>
@@ -1023,7 +1202,6 @@
 <p>Objetivo: TRON + clásicos seleccionados + castillo + fuegos.</p>
 <div class="card-status">Tocar para abrir/cerrar el día</div></div>
 <button aria-expanded="false" class="toggle-btn" type="button">Abrir</button></div><div class="collapsible-content" hidden="hidden">
-
 <div class="links">
 <a class="link-chip" href="https://disneyworld.disney.go.com/destinations/magic-kingdom/" target="_blank">Magic Kingdom oficial</a>
 <a class="link-chip" href="https://disneyworld.disney.go.com/attractions/magic-kingdom/tron-lightcycle-run/" target="_blank">TRON</a>
@@ -1077,7 +1255,6 @@
 <p>Objetivo: cambio de hotel, descanso y preparar Universal.</p>
 <div class="card-status">Tocar para abrir/cerrar el día</div></div>
 <button aria-expanded="false" class="toggle-btn" type="button">Abrir</button></div><div class="collapsible-content" hidden="hidden">
-
 <div class="timeline">
 <div class="time-item"><span class="time">Mañana</span><strong>Desayuno y check-out sin apuro.</strong></div>
 <div class="time-item"><span class="time">Media mañana</span><strong>Uber/transfer hacia Universal Stella Nova.</strong></div>
@@ -1094,14 +1271,14 @@
 <div class="date-badge"><span>Sep</span><span>30</span></div>
 <div class="day-heading">
 <h2>Miércoles 30/09 · Universal Studios → Hogwarts Express → Islands of Adventure</h2>
-<p>Objetivo: entrar por Londres/Diagon Alley, vivir la llegada mágica a Hogsmeade en tren y cerrar con Hogwarts.</p>
+<p>Objetivo: entrar por Londres/Diagon Alley, vivir la llegada mágica a Hogsmeade en tren y cerrar Islands con bloque Jurassic al final del día.</p>
 <div class="card-status">Tocar para abrir/cerrar el día</div></div>
 <button aria-expanded="false" class="toggle-btn" type="button">Abrir</button></div><div class="collapsible-content" hidden="hidden">
 <div class="links">
 <a class="link-chip" href="https://www.universalorlando.com/web/es/us/universal-orlando-resort/the-wizarding-world-of-harry-potter/hub" target="_blank">Wizarding World</a>
 <a class="link-chip" href="https://www.universalorlando.com/web/es/us/theme-parks/universal-studios-florida/the-wizarding-world-of-harry-potter-diagon-alley" target="_blank">Diagon Alley</a>
 <a class="link-chip" href="https://www.universalorlando.com/web/es/us/things-to-do/rides-attractions/hogwarts-express" target="_blank">Hogwarts Express</a>
-</div>
+<a class="link-chip" href="https://www.universalorlando.com/web/en/us/theme-parks/islands-of-adventure" target="_blank">Jurassic Park</a></div>
 <div class="success"><strong>Ajuste importante:</strong> este día queda definido por experiencia narrativa: Londres → Diagon Alley → King’s Cross → Hogwarts Express → Hogsmeade. El 02/10 hacemos el recorrido inverso para completar ambos sentidos del tren.</div>
 <div class="timeline">
 <div class="time-item"><span class="time">Muy temprano</span><strong>Shuttle desde Stella Nova hacia Universal Studios Florida.</strong><small>Confirmar la noche anterior horarios y Early Park Admission. Mantener este inicio narrativo salvo que en el momento decidan priorizar eficiencia por Hagrid’s.</small></div>
@@ -1110,10 +1287,8 @@
 <div class="time-item"><span class="time">Media mañana</span><strong>Tips Londres/Diagon: cabina 62442, Knight Bus, 12 Grimmauld Place, dragón de Gringotts, Money Exchange, Borgin and Burkes y Madam Malkin.</strong></div>
 <div class="time-item"><span class="time">Mediodía</span><strong>Almuerzo en Leaky Cauldron o snack temático.</strong></div>
 <div class="time-item"><span class="time">Tarde</span><strong>Hogwarts Express: King’s Cross → Hogsmeade.</strong><small>Este es el sentido Universal Studios hacia Islands.</small></div>
-<div class="time-item"><span class="time">Tarde</span><strong>Hogsmeade + Hogwarts + Forbidden Journey.</strong><small>Si alguien no quiere subirse, pedir Castle Walk para recorrer el castillo.</small></div>
-<div class="time-item"><span class="time">Tarde/noche</span><strong>Flight of the Hippogriff o Spider-Man si los tiempos acompañan.</strong></div>
-<div class="time-item"><span class="time">Cerca del cierre</span><strong>Hagrid’s solo si la espera está razonable.</strong><small>La prioridad fuerte de Hagrid queda para arrancar el 02/10.</small></div>
-</div>
+<div class="time-item"><span class="time">Tarde</span><strong>Hogsmeade + Hogwarts + Forbidden Journey / Castle Walk.</strong><small>Si alguien no quiere subirse, pedir Castle Walk para recorrer el castillo sin hacer la atracción.</small></div>
+<div class="time-item"><span class="time">Tarde/noche</span><strong>Resto de Islands: Flight of the Hippogriff, Spider-Man o Hagrid’s si la espera baja.</strong><small>Hagrid’s queda como intento solo si la fila está razonable; la prioridad fuerte pasa al 02/10.</small></div><div class="time-item"><span class="time">Final Islands</span><strong>Raptor Encounter → Jurassic Park Discovery Center → resto de Islands.</strong><small>Bloque final pensado para fotos con raptor, recorrer el Discovery Center y completar alguna pendiente cercana.</small></div><div class="time-item"><span class="time">Última atracción</span><strong>Jurassic Park River Adventure.</strong><small>Dejarla para el final porque se pueden mojar; llevar poncho y después volver directo al hotel a cambiarse si hace falta.</small></div></div>
 <h3>Atracciones del día</h3><p class="media-note">En las tablas, los botones Info/Video/Fotos abren material para que la familia vea de qué se trata cada atracción antes del viaje.</p>
 <div class="table-wrap"><table><thead><tr><th>Prioridad</th><th>Atracción / experiencia</th><th>Qué es</th><th>Ver</th></tr></thead><tbody>
 <tr><td><span class="priority p-high">Alta</span></td><td>Diagon Alley</td><td>Zona inmersiva de Harry Potter con tiendas, varitas, comida temática y detalles ocultos.</td><td class="resource-cell"><div class="row-links"><a class="media-chip" href="https://www.universalorlando.com/web/es/us/theme-parks/universal-studios-florida/the-wizarding-world-of-harry-potter-diagon-alley" rel="noopener" target="_blank">Info</a><a class="media-chip" href="https://www.youtube.com/results?search_query=Diagon+Alley+Universal+Orlando+ride+attraction+POV" rel="noopener" target="_blank">Video</a><a class="media-chip" href="https://www.google.com/search?tbm=isch&amp;q=Diagon+Alley+Universal+Orlando" rel="noopener" target="_blank">Fotos</a></div></td></tr>
@@ -1124,12 +1299,11 @@
 <tr><td><span class="priority p-high">Alta</span></td><td>Harry Potter and the Forbidden Journey</td><td>Atracción dentro del castillo de Hogwarts con movimiento, pantallas y escenas mágicas. Puede marear.</td><td class="resource-cell"><div class="row-links"><a class="media-chip" href="https://www.universalorlando.com/web/en/us/things-to-do/rides-attractions/harry-potter-and-the-forbidden-journey" rel="noopener" target="_blank">Info</a><a class="media-chip" href="https://www.youtube.com/results?search_query=Harry+Potter+and+the+Forbidden+Journey+Universal+Orlando+ride+attraction+POV" rel="noopener" target="_blank">Video</a><a class="media-chip" href="https://www.google.com/search?tbm=isch&amp;q=Harry+Potter+and+the+Forbidden+Journey+Universal+Orlando" rel="noopener" target="_blank">Fotos</a></div></td></tr>
 <tr><td><span class="priority p-high">Alta</span></td><td>Castle Walk</td><td>Recorrido del castillo de Hogwarts sin subirse a Forbidden Journey.</td><td class="resource-cell"><div class="row-links"><a class="media-chip" href="https://www.universalorlando.com/web/en/us/things-to-do/rides-attractions/harry-potter-and-the-forbidden-journey" rel="noopener" target="_blank">Info</a><a class="media-chip" href="https://www.youtube.com/results?search_query=Universal+Orlando+Castle+Walk+Forbidden+Journey" rel="noopener" target="_blank">Video</a><a class="media-chip" href="https://www.google.com/search?tbm=isch&amp;q=Castle+Walk+Universal+Orlando" rel="noopener" target="_blank">Fotos</a></div></td></tr>
 <tr><td><span class="priority p-med">Media</span></td><td>Flight of the Hippogriff</td><td>Montaña rusa familiar, corta y liviana, ubicada en Hogsmeade.</td><td class="resource-cell"><div class="row-links"><a class="media-chip" href="https://www.universalorlando.com/web/en/us/things-to-do/rides-attractions/flight-of-the-hippogriff" rel="noopener" target="_blank">Info</a><a class="media-chip" href="https://www.youtube.com/results?search_query=Flight+of+the+Hippogriff+Universal+Orlando+ride+attraction+POV" rel="noopener" target="_blank">Video</a><a class="media-chip" href="https://www.google.com/search?tbm=isch&amp;q=Flight+of+the+Hippogriff+Universal+Orlando" rel="noopener" target="_blank">Fotos</a></div></td></tr>
-</tbody></table></div>
+<tr><td><span class="priority p-med">Media/alta</span></td><td>Raptor Encounter</td><td>Encuentro/foto con velociraptor en la zona Jurassic Park; puede variar por horarios y clima.</td><td class="resource-cell"><div class="row-links"><a class="media-chip" href="https://www.universalorlando.com/web/en/us/plan-your-visit/resort-maps/interactive-map.html?mapFilters=uor.venues%3Buor.ioa" rel="noopener" target="_blank">Info</a><a class="media-chip" href="https://www.youtube.com/results?search_query=Raptor+Encounter+Universal+Orlando" rel="noopener" target="_blank">Video</a><a class="media-chip" href="https://www.google.com/search?tbm=isch&amp;q=Raptor+Encounter+Universal+Orlando" rel="noopener" target="_blank">Fotos</a></div></td></tr><tr><td><span class="priority p-med">Media</span></td><td>Jurassic Park Discovery Center</td><td>Centro indoor con fósiles, detalles de dinosaurios, exhibiciones y ambientación Jurassic.</td><td class="resource-cell"><div class="row-links"><a class="media-chip" href="https://www.universalorlando.com/web/en/us/plan-your-visit/resort-maps/interactive-map.html?mapFilters=uor.venues%3Buor.ioa" rel="noopener" target="_blank">Info</a><a class="media-chip" href="https://www.youtube.com/results?search_query=Jurassic+Park+Discovery+Center+Universal+Orlando" rel="noopener" target="_blank">Video</a><a class="media-chip" href="https://www.google.com/search?tbm=isch&amp;q=Jurassic+Park+Discovery+Center+Universal+Orlando" rel="noopener" target="_blank">Fotos</a></div></td></tr><tr><td><span class="priority p-med">Optativa/media</span></td><td>Jurassic Park River Adventure</td><td>Paseo en bote con dinosaurios y caída final. Se pueden mojar, por eso va como última atracción.</td><td class="resource-cell"><div class="row-links"><a class="media-chip" href="https://www.universalorlando.com/web/en/us/things-to-do/rides-attractions/jurassic-park-river-adventure" rel="noopener" target="_blank">Info</a><a class="media-chip" href="https://www.youtube.com/results?search_query=Jurassic+Park+River+Adventure+Universal+Orlando+ride+POV" rel="noopener" target="_blank">Video</a><a class="media-chip" href="https://www.google.com/search?tbm=isch&amp;q=Jurassic+Park+River+Adventure+Universal+Orlando" rel="noopener" target="_blank">Fotos</a></div></td></tr></tbody></table></div>
 <h3>Atracciones no priorizadas</h3>
 <div class="table-wrap"><table><thead><tr><th>Prioridad</th><th>Atracción</th><th>Qué es</th><th>Por qué no está priorizada</th><th>Ver</th></tr></thead><tbody>
 <tr><td><span class="priority p-opt">Optativa alta</span></td><td>Hagrid’s Magical Creatures Motorbike Adventure</td><td>Montaña rusa temática de Hagrid con moto, criaturas y sorpresas.</td><td>La prioridad de apertura queda para el 02/10. En este día solo hacerla si la espera baja cerca del cierre.</td><td class="resource-cell"><div class="row-links"><a class="media-chip" href="https://www.universalorlando.com/web/en/us/things-to-do/rides-attractions/hagrids-magical-creatures-motorbike-adventure" rel="noopener" target="_blank">Info</a><a class="media-chip" href="https://www.youtube.com/results?search_query=Hagrid%E2%80%99s+Magical+Creatures+Motorbike+Adventure+Universal+Orlando+ride+attraction+POV" rel="noopener" target="_blank">Video</a><a class="media-chip" href="https://www.google.com/search?tbm=isch&amp;q=Hagrid%E2%80%99s+Magical+Creatures+Motorbike+Adventure+Universal+Orlando" rel="noopener" target="_blank">Fotos</a></div></td></tr>
 <tr><td><span class="priority p-med">Media</span></td><td>The Amazing Adventures of Spider-Man</td><td>Simulador 3D/4D con movimiento y efectos.</td><td>Queda como bonus si sobra tiempo al llegar a Islands; tiene mejor encaje principal el 02/10.</td><td class="resource-cell"><div class="row-links"><a class="media-chip" href="https://www.universalorlando.com/web/en/us/things-to-do/rides-attractions/the-amazing-adventures-of-spider-man" rel="noopener" target="_blank">Info</a><a class="media-chip" href="https://www.youtube.com/results?search_query=The+Amazing+Adventures+of+Spider-Man+Universal+Orlando+ride+attraction+POV" rel="noopener" target="_blank">Video</a><a class="media-chip" href="https://www.google.com/search?tbm=isch&amp;q=The+Amazing+Adventures+of+Spider-Man+Universal+Orlando" rel="noopener" target="_blank">Fotos</a></div></td></tr>
-<tr><td><span class="priority p-med">Optativa/media</span></td><td>Jurassic Park River Adventure</td><td>Paseo en bote con dinosaurios y caída final; se pueden mojar.</td><td>No conviene hacerla este día si están enfocados en Harry Potter o no quieren mojarse.</td><td class="resource-cell"><div class="row-links"><a class="media-chip" href="https://www.universalorlando.com/web/en/us/things-to-do/rides-attractions/jurassic-park-river-adventure" rel="noopener" target="_blank">Info</a><a class="media-chip" href="https://www.youtube.com/results?search_query=Jurassic+Park+River+Adventure+Universal+Orlando+ride+attraction+POV" rel="noopener" target="_blank">Video</a><a class="media-chip" href="https://www.google.com/search?tbm=isch&amp;q=Jurassic+Park+River+Adventure+Universal+Orlando" rel="noopener" target="_blank">Fotos</a></div></td></tr>
 </tbody></table></div>
 <h3>Tips Harry Potter del día</h3>
 <div class="note-list">
@@ -1149,7 +1323,6 @@
 <p>Objetivo: Ministry of Magic + Super Nintendo World.</p>
 <div class="card-status">Tocar para abrir/cerrar el día</div></div>
 <button aria-expanded="false" class="toggle-btn" type="button">Abrir</button></div><div class="collapsible-content" hidden="hidden">
-
 <div class="links">
 <a class="link-chip" href="https://www.universalorlando.com/web/en/us/epic-universe" target="_blank">Epic Universe</a>
 <a class="link-chip" href="https://www.universalorlando.com/web/en/us/epic-universe/worlds/the-wizarding-world-of-harry-potter-ministry-of-magic" target="_blank">Ministry of Magic</a>
@@ -1201,20 +1374,20 @@
 <div class="date-badge"><span>Oct</span><span>02</span></div>
 <div class="day-heading">
 <h2>Viernes 02/10 · Islands of Adventure → Hogwarts Express → Universal Studios</h2>
-<p>Objetivo: hacer Hagrid’s a primera hora, completar Islands y volver en tren a Universal Studios para MIB, Transformers y pendientes.</p>
+<p>Objetivo: arrancar fuerte en Islands con Hagrid’s y pendientes; si quedó sin hacer, sumar bloque Jurassic como optativo antes del tren a Universal Studios.</p>
 <div class="card-status">Tocar para abrir/cerrar el día</div></div>
 <button aria-expanded="false" class="toggle-btn" type="button">Abrir</button></div><div class="collapsible-content" hidden="hidden">
 <div class="links">
 <a class="link-chip" href="https://www.universalorlando.com/web/en/us/things-to-do/rides-attractions/hagrids-magical-creatures-motorbike-adventure" target="_blank">Hagrid’s</a>
 <a class="link-chip" href="https://www.universalorlando.com/web/es/us/things-to-do/rides-attractions/hogwarts-express" target="_blank">Hogwarts Express</a>
 <a class="link-chip" href="https://www.universalorlando.com/web/en/us/things-to-do/rides-attractions/the-amazing-adventures-of-spider-man" target="_blank">Spider-Man</a>
-</div>
+<a class="link-chip" href="https://www.universalorlando.com/web/en/us/theme-parks/islands-of-adventure" target="_blank">Jurassic Park</a></div>
 <div class="success"><strong>Ajuste importante:</strong> este día hace el recorrido inverso al 30/09: arranca en Islands, prioriza Hagrid’s temprano y cruza en tren Hogsmeade → King’s Cross hacia Universal Studios.</div>
 <div class="timeline">
 <div class="time-item"><span class="time">Muy temprano</span><strong>Shuttle desde Stella Nova hacia Islands of Adventure.</strong></div>
 <div class="time-item"><span class="time">Early Park Admission / apertura</span><strong>Hagrid’s Magical Creatures Motorbike Adventure primero.</strong><small>Es la atracción más crítica de Islands para ustedes; hacerla de entrada.</small></div>
 <div class="time-item"><span class="time">Mañana</span><strong>Hogsmeade, Forbidden Journey o Castle Walk si quedó pendiente.</strong></div>
-<div class="time-item"><span class="time">Media mañana</span><strong>The Amazing Adventures of Spider-Man.</strong></div>
+<div class="time-item"><span class="time">Media mañana</span><strong>The Amazing Adventures of Spider-Man.</strong></div><div class="time-item"><span class="time">Optativo Jurassic</span><strong>Raptor Encounter → Jurassic Park Discovery Center → Jurassic Park River Adventure.</strong><small>Solo si no lo hicieron el 30/09 o si los chicos quieren repetir. Si hacen River Adventure, asumir que pueden mojarse antes de pasar a Universal Studios.</small></div>
 <div class="time-item"><span class="time">Mediodía</span><strong>Almuerzo en Three Broomsticks o CityWalk, según dónde estén.</strong></div>
 <div class="time-item"><span class="time">Tarde</span><strong>Hogwarts Express: Hogsmeade → King’s Cross.</strong><small>Este es el sentido Islands hacia Universal Studios, distinto al del 30/09.</small></div>
 <div class="time-item"><span class="time">Tarde</span><strong>Universal Studios: Men in Black + Transformers + Bourne Stuntacular.</strong></div>
@@ -1234,7 +1407,7 @@
 </tbody></table></div>
 <h3>Atracciones no priorizadas</h3>
 <div class="table-wrap"><table><thead><tr><th>Prioridad</th><th>Atracción</th><th>Qué es</th><th>Por qué no está priorizada</th><th>Ver</th></tr></thead><tbody>
-<tr><td><span class="priority p-med">Optativa/media</span></td><td>Jurassic Park River Adventure</td><td>Paseo en bote con dinosaurios y caída final; se pueden mojar.</td><td>Hacer solo si hace calor y aceptan mojarse.</td><td class="resource-cell"><div class="row-links"><a class="media-chip" href="https://www.universalorlando.com/web/en/us/things-to-do/rides-attractions/jurassic-park-river-adventure" rel="noopener" target="_blank">Info</a><a class="media-chip" href="https://www.youtube.com/results?search_query=Jurassic+Park+River+Adventure+Universal+Orlando+ride+attraction+POV" rel="noopener" target="_blank">Video</a><a class="media-chip" href="https://www.google.com/search?tbm=isch&amp;q=Jurassic+Park+River+Adventure+Universal+Orlando" rel="noopener" target="_blank">Fotos</a></div></td></tr>
+<tr><td><span class="priority p-med">Optativa/media</span></td><td>Jurassic Park Discovery Center</td><td>Centro indoor con exhibiciones y ambientación de dinosaurios.</td><td>Complementa Raptor/Jurassic sin exigir fila larga; útil si quieren un bloque Jurassic corto.</td><td class="resource-cell"><div class="row-links"><a class="media-chip" href="https://www.universalorlando.com/web/en/us/plan-your-visit/resort-maps/interactive-map.html?mapFilters=uor.venues%3Buor.ioa" rel="noopener" target="_blank">Info</a><a class="media-chip" href="https://www.youtube.com/results?search_query=Jurassic+Park+Discovery+Center+Universal+Orlando" rel="noopener" target="_blank">Video</a><a class="media-chip" href="https://www.google.com/search?tbm=isch&amp;q=Jurassic+Park+Discovery+Center+Universal+Orlando" rel="noopener" target="_blank">Fotos</a></div></td></tr><tr><td><span class="priority p-med">Optativa/media</span></td><td>Raptor Encounter</td><td>Encuentro/foto con velociraptor en Jurassic Park.</td><td>Optativa en la primera parte del viernes si no se hizo el 30/09 o si sobra tiempo antes del tren.</td><td class="resource-cell"><div class="row-links"><a class="media-chip" href="https://www.universalorlando.com/web/en/us/plan-your-visit/resort-maps/interactive-map.html?mapFilters=uor.venues%3Buor.ioa" rel="noopener" target="_blank">Info</a><a class="media-chip" href="https://www.youtube.com/results?search_query=Raptor+Encounter+Universal+Orlando" rel="noopener" target="_blank">Video</a><a class="media-chip" href="https://www.google.com/search?tbm=isch&amp;q=Raptor+Encounter+Universal+Orlando" rel="noopener" target="_blank">Fotos</a></div></td></tr><tr><td><span class="priority p-med">Optativa/media</span></td><td>Jurassic Park River Adventure</td><td>Paseo en bote con dinosaurios y caída final; se pueden mojar.</td><td>Optativa en la primera parte del viernes si no la hicieron el 30/09; ojo que se pueden mojar.</td><td class="resource-cell"><div class="row-links"><a class="media-chip" href="https://www.universalorlando.com/web/en/us/things-to-do/rides-attractions/jurassic-park-river-adventure" rel="noopener" target="_blank">Info</a><a class="media-chip" href="https://www.youtube.com/results?search_query=Jurassic+Park+River+Adventure+Universal+Orlando+ride+attraction+POV" rel="noopener" target="_blank">Video</a><a class="media-chip" href="https://www.google.com/search?tbm=isch&amp;q=Jurassic+Park+River+Adventure+Universal+Orlando" rel="noopener" target="_blank">Fotos</a></div></td></tr>
 <tr><td><span class="priority p-med">Media/baja</span></td><td>Despicable Me Minion Mayhem</td><td>Simulador familiar de Minions.</td><td>Divertida, pero no indispensable frente a HP, Spider-Man, MIB y Transformers.</td><td class="resource-cell"><div class="row-links"><a class="media-chip" href="https://www.universalorlando.com/web/en/us/things-to-do/rides-attractions/despicable-me-minion-mayhem" rel="noopener" target="_blank">Info</a><a class="media-chip" href="https://www.youtube.com/results?search_query=Despicable+Me+Minion+Mayhem+Universal+Orlando+ride+attraction+POV" rel="noopener" target="_blank">Video</a><a class="media-chip" href="https://www.google.com/search?tbm=isch&amp;q=Despicable+Me+Minion+Mayhem+Universal+Orlando" rel="noopener" target="_blank">Fotos</a></div></td></tr>
 <tr><td><span class="priority p-med">Media/baja</span></td><td>Villain-Con Minion Blast</td><td>Experiencia interactiva de Minions.</td><td>Solo si hay poca fila o los chicos tienen ganas.</td><td class="resource-cell"><div class="row-links"><a class="media-chip" href="https://www.universalorlando.com/web/en/us/things-to-do/rides-attractions/illuminations-villain-con-minion-blast" rel="noopener" target="_blank">Info</a><a class="media-chip" href="https://www.youtube.com/results?search_query=Villain-Con+Minion+Blast+Universal+Orlando+ride+attraction+POV" rel="noopener" target="_blank">Video</a><a class="media-chip" href="https://www.google.com/search?tbm=isch&amp;q=Villain-Con+Minion+Blast+Universal+Orlando" rel="noopener" target="_blank">Fotos</a></div></td></tr>
 <tr><td><span class="priority p-opt">Optativa</span></td><td>The Simpsons Ride</td><td>Simulador de Los Simpson.</td><td>Puede marear bastante.</td><td class="resource-cell"><div class="row-links"><a class="media-chip" href="https://www.universalorlando.com/web/en/us/things-to-do/rides-attractions/the-simpsons-ride" rel="noopener" target="_blank">Info</a><a class="media-chip" href="https://www.youtube.com/results?search_query=The+Simpsons+Ride+Universal+Orlando+ride+attraction+POV" rel="noopener" target="_blank">Video</a><a class="media-chip" href="https://www.google.com/search?tbm=isch&amp;q=The+Simpsons+Ride+Universal+Orlando" rel="noopener" target="_blank">Fotos</a></div></td></tr>
@@ -1253,7 +1426,6 @@
 <p>Objetivo: momento NBA liviano + compras.</p>
 <div class="card-status">Tocar para abrir/cerrar el día</div></div>
 <button aria-expanded="false" class="toggle-btn" type="button">Abrir</button></div><div class="collapsible-content" hidden="hidden">
-
 <div class="links">
 <a class="link-chip" href="https://www.kiacenter.com/plan-your-visit/team-shop" target="_blank">Orlando Magic Team Shop</a>
 <a class="link-chip" href="https://www.kiacenter.com/events/orlando-magic" target="_blank">Eventos Orlando Magic</a>
@@ -1277,7 +1449,6 @@
 <p>Objetivo: paseo lindo, compras y fotos sin parque.</p>
 <div class="card-status">Tocar para abrir/cerrar el día</div></div>
 <button aria-expanded="false" class="toggle-btn" type="button">Abrir</button></div><div class="collapsible-content" hidden="hidden">
-
 <div class="links">
 <a class="link-chip" href="https://disneyworld.disney.go.com/destinations/disney-springs/" target="_blank">Disney Springs oficial</a>
 <a class="link-chip" href="https://disneyworld.disney.go.com/shops/disney-springs/disney-photopass-studio/" target="_blank">PhotoPass Studio</a>
@@ -1310,7 +1481,6 @@
 <p>Objetivo: elegir según energía real.</p>
 <div class="card-status">Tocar para abrir/cerrar el día</div></div>
 <button aria-expanded="false" class="toggle-btn" type="button">Abrir</button></div><div class="collapsible-content" hidden="hidden">
-
 <div class="table-wrap">
 <table>
 <thead><tr><th>Prioridad</th><th>Plan</th><th>Qué es</th><th>Ver</th></tr></thead>
@@ -1334,7 +1504,6 @@
 <p>Vuelo a las 14:00. Objetivo: salir con margen.</p>
 <div class="card-status">Tocar para abrir/cerrar el día</div></div>
 <button aria-expanded="false" class="toggle-btn" type="button">Abrir</button></div><div class="collapsible-content" hidden="hidden">
-
 <div class="timeline">
 <div class="time-item"><span class="time">07:30</span><strong>Desayuno.</strong></div>
 <div class="time-item"><span class="time">08:30</span><strong>Cerrar valijas.</strong></div>
@@ -1346,10 +1515,8 @@
 <div class="footer-nav"><a class="btn" href="#dia-05">← Día anterior</a><a class="btn primary" href="#top">Volver arriba ↑</a></div>
 </div></section>
 <section class="section-card is-collapsed" id="links"><div class="collapsible-header"><h2>🔗 Links útiles de ampliación</h2><button aria-expanded="false" class="toggle-btn" type="button">Abrir</button></div><div class="collapsible-content" hidden="hidden">
-
 <div class="grid three">
 <div class="mini-card is-collapsed"><div class="mini-collapsible-header"><h4>Disney</h4><button aria-expanded="false" class="toggle-btn" type="button">Abrir</button></div><div class="mini-collapsible-content" hidden="hidden">
-
 <div class="links">
 <a class="link-chip" href="https://disneyworld.disney.go.com/es-us/" target="_blank">Disney World oficial</a>
 <a class="link-chip" href="https://disneyworld.disney.go.com/es-us/memory-maker/" target="_blank">Memory Maker</a>
@@ -1359,7 +1526,6 @@
 </div>
 </div></div>
 <div class="mini-card is-collapsed"><div class="mini-collapsible-header"><h4>Universal</h4><button aria-expanded="false" class="toggle-btn" type="button">Abrir</button></div><div class="mini-collapsible-content" hidden="hidden">
-
 <div class="links">
 <a class="link-chip" href="https://www.universalorlando.com/web/es/us" target="_blank">Universal Orlando oficial</a>
 <a class="link-chip" href="https://www.universalorlando.com/web/es/us/my-universal-photo" target="_blank">My Universal Photos</a>
@@ -1369,7 +1535,6 @@
 </div>
 </div></div>
 <div class="mini-card is-collapsed"><div class="mini-collapsible-header"><h4>Orlando / transporte / NBA</h4><button aria-expanded="false" class="toggle-btn" type="button">Abrir</button></div><div class="mini-collapsible-content" hidden="hidden">
-
 <div class="links">
 <a class="link-chip" href="https://flymco.com/ground-transportation/ride-share/" target="_blank">MCO Ride Share</a>
 <a class="link-chip" href="https://www.kiacenter.com/events/orlando-magic" target="_blank">Orlando Magic eventos</a>
@@ -1477,6 +1642,119 @@
       updateProgress();
     }
 
+
+
+    let searchResults = [];
+    let currentSearchIndex = -1;
+    let searchDebounce = null;
+
+    function normalizeSearchText(txt) {
+      return (txt || '')
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '');
+    }
+
+    function clearSearchClasses() {
+      document.querySelectorAll('.search-match, .search-current').forEach(el => {
+        el.classList.remove('search-match', 'search-current');
+      });
+    }
+
+    function runSiteSearch(autoScroll = true) {
+      const input = document.getElementById('siteSearch');
+      const status = document.getElementById('searchStatus');
+      if (!input || !status) return;
+      const raw = input.value.trim();
+      const q = normalizeSearchText(raw);
+      clearSearchClasses();
+      searchResults = [];
+      currentSearchIndex = -1;
+
+      if (q.length < 2) {
+        status.textContent = raw.length ? 'Escribí al menos 2 letras para buscar.' : 'Buscador listo';
+        return;
+      }
+
+      const candidates = Array.from(document.querySelectorAll(
+        'main .day-title, main .collapsible-header, main .mini-collapsible-header, main .time-item, main tbody tr, main .note, main .success, main .warning, main li, main p, main h3, main h4'
+      ));
+
+      const seen = new Set();
+      candidates.forEach(el => {
+        const txt = normalizeSearchText(el.textContent);
+        if (txt.includes(q) && !seen.has(el)) {
+          seen.add(el);
+          el.classList.add('search-match');
+          searchResults.push(el);
+          const card = el.closest('.section-card, .mini-card');
+          if (card) {
+            setCardOpen(card, true);
+            const parent = card.parentElement ? card.parentElement.closest('.section-card, .mini-card') : null;
+            if (parent) setCardOpen(parent, true);
+          }
+        }
+      });
+
+      if (!searchResults.length) {
+        status.textContent = `Sin resultados para “${raw}”.`;
+        return;
+      }
+
+      status.textContent = `${searchResults.length} resultado${searchResults.length === 1 ? '' : 's'} para “${raw}”.`;
+      if (autoScroll) scrollToSearchResult(0);
+    }
+
+    function scrollToSearchResult(index) {
+      if (!searchResults.length) return;
+      document.querySelectorAll('.search-current').forEach(el => el.classList.remove('search-current'));
+      currentSearchIndex = (index + searchResults.length) % searchResults.length;
+      const el = searchResults[currentSearchIndex];
+      el.classList.add('search-current');
+      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      const status = document.getElementById('searchStatus');
+      const raw = document.getElementById('siteSearch')?.value?.trim() || '';
+      if (status) status.textContent = `${currentSearchIndex + 1}/${searchResults.length} resultado${searchResults.length === 1 ? '' : 's'} para “${raw}”.`;
+    }
+
+    function nextSearchResult() {
+      if (!searchResults.length) runSiteSearch(true);
+      else scrollToSearchResult(currentSearchIndex + 1);
+    }
+
+    function prevSearchResult() {
+      if (!searchResults.length) runSiteSearch(true);
+      else scrollToSearchResult(currentSearchIndex - 1);
+    }
+
+    function clearSiteSearch() {
+      const input = document.getElementById('siteSearch');
+      if (input) input.value = '';
+      clearSearchClasses();
+      searchResults = [];
+      currentSearchIndex = -1;
+      const status = document.getElementById('searchStatus');
+      if (status) status.textContent = 'Buscador listo';
+    }
+
+    function initSearch() {
+      const input = document.getElementById('siteSearch');
+      if (!input) return;
+      input.addEventListener('input', () => {
+        clearTimeout(searchDebounce);
+        searchDebounce = setTimeout(() => runSiteSearch(false), 180);
+      });
+      input.addEventListener('keydown', ev => {
+        if (ev.key === 'Enter') {
+          ev.preventDefault();
+          if (searchResults.length) nextSearchResult();
+          else runSiteSearch(true);
+        }
+        if (ev.key === 'Escape') clearSiteSearch();
+      });
+    }
+
+    initSearch();
     initCollapsibles();
     loadChecks();
   </script>
